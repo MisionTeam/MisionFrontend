@@ -2,23 +2,35 @@ import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
 import { Button } from 'react-bootstrap';
+import { push } from 'react-router-redux';
 
+import { processUserLogin, processUserLogout } from 'store/auth/authActions.js';
 import { processgetFacebookLoginStatus } from 'store/facebookLogin/facebookLoginActions.js';
 
 const connectState = (state) => ({
+  auth: state.app.auth
 });
 
 const dispatchConnect = (dispatch) => ({
-  getFacebookLoginStatus: (cb) => processgetFacebookLoginStatus(dispatch, cb)
+  getFacebookLoginStatus: (cb) => processgetFacebookLoginStatus(dispatch, cb),
+  login: (data, cb) => processUserLogin(dispatch, data, cb),
+  push: (location) => dispatch(push(location))
 });
 
 @connect(connectState, dispatchConnect)
 class FacebookLoginContainer extends React.Component {
   static propTypes = {
-    getFacebookLoginStatus: React.PropTypes.func.isRequired
+    auth: React.PropTypes.object.isRequired,
+    login: React.PropTypes.func.isRequired,
+    getFacebookLoginStatus: React.PropTypes.func.isRequired,
+    push: React.PropTypes.func.isRequired,
   };
 
-  componentDidMount() {
+  componentWillMount() {
+    this.componentWillReceiveProps(this.props);
+  }
+
+  componentWillReceiveProps(props) {
     window.fbAsyncInit = function() {
       window.FB.init({
         appId: '899888736779528',
@@ -26,6 +38,7 @@ class FacebookLoginContainer extends React.Component {
         xfbml: true,  // parse social plugins on this page
         version: 'v2.5' // use graph api version 2.5
       });
+      props.getFacebookLoginStatus();
     };
     ((d, s, id) => {
       const element = d.getElementsByTagName(s)[0];
@@ -41,23 +54,32 @@ class FacebookLoginContainer extends React.Component {
   @autobind
   handleAppLogin() {
     console.log('app login');
+    this.props.login(this.props.auth.toJS(), () => {
+      this.props.push('/home');
+    });
   }
 
   @autobind
   handleFacebookLogin() {
+    if (this.props.auth.toJS().facebookLogin.status !== 'connected') {
+      window.FB.login((response) => {
+        console.log(response);
+        this.checkFacebookLoginState();
+      }, (error) => {
+        console.log(error);
+      });
+    } else {
+      this.handleAppLogin();
+    }
+  }
+
+  @autobind
+  checkFacebookLoginState() {
     this.props.getFacebookLoginStatus((response) => {
-      console.log(response);
       if (response.status === 'connected') {
-        console.log('logged in');
-      } else if (response.status === 'not_authorized') {
         this.handleAppLogin();
       } else {
-        window.FB.login((response) => {
-          console.log(response);
-          this.handleAppLogin();
-        }, (error) => {
-          console.log(error);
-        });
+        console.log(response);
       }
     });
   }

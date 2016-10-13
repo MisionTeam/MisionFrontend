@@ -29,7 +29,7 @@ function restrictedRoute({
 
     checkAuthAndRedirect(props) {
       const { auth } = props;
-      if (auth.isLoggedIn) {
+      if (auth.toJS().isLoggedIn) {
         return;
       }
       this.redirect(auth);
