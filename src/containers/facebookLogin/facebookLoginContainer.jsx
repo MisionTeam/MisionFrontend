@@ -53,8 +53,7 @@ class FacebookLoginContainer extends React.Component {
 
   @autobind
   handleAppLogin() {
-    console.log('app login');
-    this.props.login(this.props.auth.toJS(), () => {
+    this.props.login(this.props.auth.toJS()).then((response) => {
       this.props.push('/home');
     });
   }
