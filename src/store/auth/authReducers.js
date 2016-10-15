@@ -20,6 +20,13 @@ export const authReducer = handleActions({
     });
   },
 
+  [authActions.userLoginFailed().type]: (state) => {
+    console.log(state);
+    return state.merge({
+      isLoggedIn: false
+    });
+  },
+
   [facebookLoginActions.getFacebookLoginStatus().type]: (state, action) => {
     console.log(action);
     return state.mergeDeep({
