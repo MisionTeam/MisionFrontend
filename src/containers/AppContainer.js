@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react';
 import { browserHistory, Router } from 'react-router';
-import { Provider } from 'react-redux';
+import { Provider, connect } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { IntlProvider } from 'react-intl';
 
@@ -8,6 +8,13 @@ import { storageManager, STORAGE_TYPES } from 'utils/storageUtils.js';
 
 const localeStorage = storageManager.createOrFetchStorage('locale', STORAGE_TYPES.local);
 
+const connectState = (state) => {
+  return {
+    messages: state.app.locale.messages
+  };
+};
+
+@connect(connectState)
 class AppContainer extends Component {
   static propTypes = {
     routes: PropTypes.object.isRequired,
