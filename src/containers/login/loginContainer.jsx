@@ -1,7 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
-import {Form, FormGroup, FormControl, ControlLabel, Button, ButtonToolbar} from 'react-bootstrap';
 
 import FacebookLoginContainer from 'containers/facebookLogin/FacebookLoginContainer.jsx';
 
@@ -39,29 +38,12 @@ class LoginContainer extends React.Component {
   }
 
   render() {
+    const { auth } = this.props;
     return (
-      <div className="login-form">
-        <h2>Login</h2>
-        <Form>
-          <FormGroup controlId="email">
-            <ControlLabel>E-mail</ControlLabel>
-            <FormControl type="text" ref="email" placeholder="yours@example.com" required />
-          </FormGroup>
-
-          <FormGroup controlId="password">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl type="password" ref="password" placeholder="Password" required />
-          </FormGroup>
-
-          <ButtonToolbar>
-            <Button type="submit" bsStyle="primary" onClick={this.handleLogin}>Sign In</Button>
-          </ButtonToolbar>
-
-          <ButtonToolbar>
-            <Button type="submit" bsStyle="primary" onClick={this.handleLogout}>Sign Out</Button>
-          </ButtonToolbar>
-        </Form>
-        <FacebookLoginContainer />
+      <div className="login-container">
+        {
+          auth.isLoggedIn ? <div>You are logged in</div> : <FacebookLoginContainer />
+        }
       </div>
     );
   }

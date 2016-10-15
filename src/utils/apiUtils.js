@@ -12,7 +12,7 @@ api.interceptors.request.use(
   (config) => {
     const updateConfig = config;
     updateConfig.headers = {
-      'content-type': 'application/json'
+      'content-type': 'application/x-www-form-urlencoded'
     };
     return updateConfig;
   }, (error) => Promise.reject(error)

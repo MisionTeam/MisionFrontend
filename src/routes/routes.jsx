@@ -6,7 +6,6 @@ import restrictedRoute from 'routes/restrictedRoute.jsx';
 
 import CoreLayout from '../layouts/CoreLayout/CoreLayout';
 import HomeContainer from 'containers/home/homeView.jsx';
-import LoginContainer from 'containers/login/loginContainer.jsx';
 
 class RouterRoot extends React.Component {
   static propTypes = {
@@ -27,9 +26,8 @@ class RouterRoot extends React.Component {
 
 const routes = (
   <Route path="/" component={RouterRoot} >
-    <IndexRedirect to="/login" />
-    <IndexRoute component={LoginContainer} />
-    <Route path="login" component={LoginContainer} />
+    <IndexRedirect to="/home" />
+    <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
   </Route>
 );

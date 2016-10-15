@@ -23,7 +23,7 @@ class FacebookLoginContainer extends React.Component {
     auth: React.PropTypes.object.isRequired,
     login: React.PropTypes.func.isRequired,
     getFacebookLoginStatus: React.PropTypes.func.isRequired,
-    push: React.PropTypes.func.isRequired,
+    push: React.PropTypes.func.isRequired
   };
 
   componentWillMount() {

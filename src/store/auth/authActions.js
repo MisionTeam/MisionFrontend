@@ -10,11 +10,13 @@ export const userLogout = createAction('USER_LOGOUT');
 
 export const processUserLogin = (dispatch, data, cb) => {
   console.log('hello');
-	authStorage.set(true);
-	return authService.login()
-		.withData(data)
-		.addCallback(response => dispatch(userLogin(response)))
-		.exec();
+  authStorage.set(true);
+  const formData = new FormData();
+  formData.append('fb_token', '1');
+  return authService.login()
+    .withData(formData)
+    .addCallback(response => dispatch(userLogin(response)))
+    .exec();
 };
 
 export const processUserLogout = (dispatch) => {
