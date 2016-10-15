@@ -3,17 +3,16 @@ import axios from 'axios';
 import { storageManager, STORAGE_TYPES } from 'utils/storageUtils.js';
 
 // Add any config setup for axios.
-const authStorage = storageManager.createOrFetchStorage('auth', STORAGE_TYPES.local);
+// const authStorage = storageManager.createOrFetchStorage('auth', STORAGE_TYPES.local);
 export const api = axios.create({
-  baseURL: window.environment && window.environment.API_URL || 'http://localhost:3000'
+  baseURL: 'http://52.23.239.121:8181'
 });
 
 api.interceptors.request.use(
   (config) => {
     const updateConfig = config;
     updateConfig.headers = {
-      Authorization: `Bearer ${authStorage.get()}`,
-      'content-type': 'application/json'
+      'content-type': 'application/x-www-form-urlencoded'
     };
     return updateConfig;
   }, (error) => Promise.reject(error)

@@ -29,18 +29,18 @@ function restrictedRoute({
 
     checkAuthAndRedirect(props) {
       const { auth } = props;
-      if (auth.toJS().isLoggedIn) {
+      if (auth.toJS().isLoggedIn || location.pathname === '/home') {
         return;
       }
       this.redirect(auth);
     }
 
     redirect(auth) {
-      this.props.push('/login');
+      this.props.push('/home');
     }
 
     render() {
-      return this.props.auth.isLoggedIn ? <WrappedComponent {...this.props} /> : null;
+      return this.props.auth.isLoggedIn || location.pathname === '/home' ? <WrappedComponent {...this.props} /> : null;
     }
   }
 

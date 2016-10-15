@@ -23,7 +23,7 @@ class FacebookLoginContainer extends React.Component {
     auth: React.PropTypes.object.isRequired,
     login: React.PropTypes.func.isRequired,
     getFacebookLoginStatus: React.PropTypes.func.isRequired,
-    push: React.PropTypes.func.isRequired,
+    push: React.PropTypes.func.isRequired
   };
 
   componentWillMount() {
@@ -53,8 +53,7 @@ class FacebookLoginContainer extends React.Component {
 
   @autobind
   handleAppLogin() {
-    console.log('app login');
-    this.props.login(this.props.auth.toJS(), () => {
+    this.props.login(this.props.auth.toJS()).then((response) => {
       this.props.push('/home');
     });
   }
