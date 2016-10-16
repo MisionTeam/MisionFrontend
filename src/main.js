@@ -18,7 +18,7 @@ let render = () => {
   const routes = require('./routes/routes.jsx').default;
 
   ReactDOM.render(
-    <AppContainer store={store} routes={routes} />,
+    <AppContainer store={store} routes={routes} initialLocale="en" />,
     MOUNT_NODE
   );
 };
@@ -65,4 +65,4 @@ if (__DEV__) {
 // ========================================================
 // Go!
 // ========================================================
-render();
+export default render;
