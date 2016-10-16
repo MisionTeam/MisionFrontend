@@ -17,13 +17,13 @@ export const localeUpdated = createAction('LOCALE_UPDATED');
 * final payload that is sent to the reducer.
 */
 const loadNextLocaleData = (locale) => {
-	return new Promise((resolve) => {
-		loadLocaleData(locale)
-			.then(() => {
-				const payload = { code: locale, messages: messages[locale] };
-				resolve(payload);
-			});
-	});
+  return new Promise((resolve) => {
+    loadLocaleData(locale)
+    .then(() => {
+      const payload = { code: locale, messages: messages[locale] };
+      resolve(payload);
+    });
+  });
 };
 
 /**
@@ -31,22 +31,22 @@ const loadNextLocaleData = (locale) => {
 * the selected locale in storage.
 */
 export const toggleLocale = () =>
-	(dispatch) => {
-		const nextLocale = getNextLocale(localeStorage.get());
-		// Update the locale for moment
-		moment.locale(nextLocale);
-		loadNextLocaleData(nextLocale).then((res) => {
-			dispatch(localeUpdated(res));
-		});
-	};
+  (dispatch) => {
+    const nextLocale = getNextLocale(localeStorage.get());
+    // Update the locale for moment
+    moment.locale(nextLocale);
+    loadNextLocaleData(nextLocale).then((res) => {
+      dispatch(localeUpdated(res));
+    });
+  };
 
 /**
 * The reducer. Will add the locale and the messages for said local to the state.
 */
 export const localeReducer = handleActions({
-	[localeUpdated().type]:
-		(state, action) =>
-			state.merge({
-				messages: Immutable.Map(messages[action.payload.code]),
-			}),
+  [localeUpdated().type]:
+    (state, action) =>
+      state.mergeDeep({
+        messages: Immutable.Map(messages[action.payload.code])
+      })
 }, new InitialState());

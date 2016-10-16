@@ -23,9 +23,10 @@ class AppContainer extends Component {
     messages: React.PropTypes.object.isRequired
   }
 
-  shouldComponentUpdate() {
-    return false;
-  }
+  // commented out for locale update, need further investigation on the impact for the whole app
+  // shouldComponentUpdate() {
+  //   return false;
+  // }
 
   render() {
     const { routes, store } = this.props;
