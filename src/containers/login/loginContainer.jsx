@@ -27,8 +27,9 @@ class LoginContainer extends React.Component {
 
   @autobind
   handleLogin() {
-    this.props.login();
-    console.log('login');
+    this.props.login().then((response) => {
+      console.log(response);
+    });
   }
 
   @autobind
