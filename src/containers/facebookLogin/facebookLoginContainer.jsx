@@ -4,7 +4,7 @@ import autobind from 'autobind-decorator';
 import { Button } from 'react-bootstrap';
 import { push } from 'react-router-redux';
 
-import { processUserLogin, processUserLogout } from 'store/auth/authActions.js';
+import { processUserLogin } from 'store/auth/authActions.js';
 import { processgetFacebookLoginStatus } from 'store/facebookLogin/facebookLoginActions.js';
 
 const connectState = (state) => ({
@@ -13,7 +13,7 @@ const connectState = (state) => ({
 
 const dispatchConnect = (dispatch) => ({
   getFacebookLoginStatus: (cb) => processgetFacebookLoginStatus(dispatch, cb),
-  login: (data, cb) => processUserLogin(dispatch, data, cb),
+  login: (data) => processUserLogin(dispatch, data),
   push: (location) => dispatch(push(location))
 });
 
@@ -63,7 +63,6 @@ class FacebookLoginContainer extends React.Component {
   handleFacebookLogin() {
     if (this.props.auth.toJS().facebookLogin.status !== 'connected') {
       window.FB.login((response) => {
-        console.log(response);
         this.checkFacebookLoginState();
       }, (error) => {
         console.log(error);
@@ -75,6 +74,7 @@ class FacebookLoginContainer extends React.Component {
 
   @autobind
   checkFacebookLoginState() {
+    console.log('here');
     this.props.getFacebookLoginStatus((response) => {
       if (response.status === 'connected') {
         this.handleAppLogin();

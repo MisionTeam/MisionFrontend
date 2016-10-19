@@ -9,7 +9,9 @@ export const getFacebookLoginStatus = createAction('GET_FACEBOOK_LOGIN_STATUS');
 export const processgetFacebookLoginStatus = (dispatch, cb) => {
   window.FB.getLoginStatus((response) => {
     dispatch(getFacebookLoginStatus(response));
-    cb(response);
+    if (cb) {
+      cb(response);
+    }
   }, (error) => {
     console.log(error);
   });

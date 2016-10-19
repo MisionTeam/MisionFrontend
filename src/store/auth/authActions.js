@@ -10,7 +10,11 @@ export const userLogin = createAction('USER_LOGIN');
 export const userLogout = createAction('USER_LOGOUT');
 export const userLoginFailed = createAction('USER_LOGIN_FAILED');
 
-export const processUserLogin = (dispatch, data, cb) => {
+export const clearAuthCache = () => {
+  authStorage.remove();
+};
+
+export const processUserLogin = (dispatch, data) => {
   const cacheAuth = (response) => {
     authStorage.set(response.data.token);
     return response;
@@ -26,7 +30,6 @@ export const processUserLogin = (dispatch, data, cb) => {
 };
 
 export const processUserLogout = (dispatch) => {
-  console.log('hello');
-  authStorage.set(false);
+  clearAuthCache();
   dispatch(userLogout());
 };

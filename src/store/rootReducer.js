@@ -2,12 +2,12 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import locationReducer from 'store/location';
 import { authReducer as auth } from 'store/auth/authReducers.js';
-import { memberReducer as member } from 'store/member/memberReducers.js';
+import { profileReducer as profile } from 'store/profile/profileReducers.js';
 import { localeReducer as locale } from 'store/locale/locale.js';
 
 const reducerMap = {
   auth,
-  member,
+  profile,
   locale
 };
 
