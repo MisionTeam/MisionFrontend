@@ -1,13 +1,15 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
+import { Button } from 'react-bootstrap';
 
 import FacebookLoginContainer from 'containers/facebookLogin/FacebookLoginContainer.jsx';
+import HeaderInfoContainer from 'containers/headerInfo/HeaderInfoContainer.jsx';
 
 import { processUserLogin, processUserLogout } from 'store/auth/authActions.js';
 
 const connectState = (state) => ({
-  member: state.app.member,
+  profile: state.app.profile,
   auth: state.app.auth
 });
 
@@ -20,16 +22,9 @@ const dispatchConnect = (dispatch) => ({
 class LoginContainer extends React.Component {
   static propTypes = {
     auth: React.PropTypes.object.isRequired,
-    member: React.PropTypes.object.isRequired,
-    login: React.PropTypes.func.isRequired,
+    profile: React.PropTypes.object.isRequired,
     logout: React.PropTypes.func.isRequired
   };
-
-  @autobind
-  handleLogin() {
-    this.props.login();
-    console.log('login');
-  }
 
   @autobind
   handleLogout() {
@@ -42,7 +37,11 @@ class LoginContainer extends React.Component {
     return (
       <div className="login-container">
         {
-          auth.isLoggedIn ? <div>You are logged in</div> : <FacebookLoginContainer />
+          auth.isLoggedIn ?
+            <div>
+              <HeaderInfoContainer />
+              <Button className="logout-button" bsStyle="primary" onClick={this.handleLogout} >Log out</Button>
+            </div> : <FacebookLoginContainer />
         }
       </div>
     );

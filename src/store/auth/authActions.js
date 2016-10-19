@@ -10,16 +10,19 @@ export const userLogin = createAction('USER_LOGIN');
 export const userLogout = createAction('USER_LOGOUT');
 export const userLoginFailed = createAction('USER_LOGIN_FAILED');
 
-export const processUserLogin = (dispatch, data, cb) => {
+export const clearAuthCache = () => {
+  authStorage.remove();
+};
+
+export const processUserLogin = (dispatch, data) => {
   const cacheAuth = (response) => {
-    authStorage.set(response.authResponse.accessToken);
+    authStorage.set(response.data.token);
     return response;
   };
   const formData = new FormData();
   formData.append('fb_token', '1');
   return authService.login()
     .withData(formData)
-    .withTransform(payloaders.authUser)
     .addCallback(cacheAuth)
     .addCallback(response => dispatch(userLogin(response)))
     .withErrorCallback(error => dispatch(userLoginFailed(error)))
@@ -27,7 +30,6 @@ export const processUserLogin = (dispatch, data, cb) => {
 };
 
 export const processUserLogout = (dispatch) => {
-  console.log('hello');
-  authStorage.set(false);
+  clearAuthCache();
   dispatch(userLogout());
 };

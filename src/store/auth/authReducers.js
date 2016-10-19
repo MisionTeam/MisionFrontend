@@ -14,7 +14,6 @@ export const authReducer = handleActions({
   },
 
   [authActions.userLogout().type]: (state) => {
-    console.log(state);
     return state.merge({
       isLoggedIn: false
     });

@@ -71,6 +71,7 @@
 		"no-underscore-dangle": [
 			"off"
 		],
+    operator-linebreak: ["off"],
 		"quotes": [
 			"error",
 			"single"
