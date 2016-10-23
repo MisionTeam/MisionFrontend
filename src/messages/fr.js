@@ -8,8 +8,13 @@
 */
 export default {
   /********************************
+  ****  Common   ****
+  *******************************/
+  "common.postMission": "FR Post a Mission",
+
+  /********************************
   ****  Homepage   ****
   *******************************/
-  "Homepage.welcomeMessage": "FR Welcome!",
-  "Homepage.facebookLogin.LoginButton": "FR Login with Facebook"
+  "homepage.welcomeMessage": "FR Welcome!",
+  "homepage.facebookLogin.LoginButton": "FR Login with Facebook"
 };

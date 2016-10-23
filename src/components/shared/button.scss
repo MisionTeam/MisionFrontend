@@ -1,0 +1,59 @@
+// $button-theme-red-background-hover: #7f141e;
+
+// Not restricted to just <button>s
+.button {
+	display: inline-block;
+	font-size: 1rem;
+	line-height: 1.125;
+	min-width: 160px;
+	padding: 16px 20px;
+	border: 0;
+	cursor: pointer;
+	text-decoration: none;
+	text-align: center;
+	transition: all $anchor-transition-speed;
+  border-radius: 40px;
+
+	&:disabled {
+		cursor: not-allowed !important;
+	}
+	&:not(:disabled) {
+		// -webkit-font-smoothing: antialiased; // TODO consider using this
+		color: $white;
+		background: $primary;
+		border: 1px solid $primary;
+		&:hover {
+			color: $white;
+			border-color: $blue-light;
+			background: $blue-light;
+		}
+		&:active {
+			color: $white;
+			border-color: $blue-light;
+			background: $blue-light;
+		}
+	}
+
+	&--block {
+		display: block;
+		width: 100%;
+	}
+	&--small {
+		font-size: 0.8rem;
+		padding: 5px 10px;
+		min-width: 0;
+	}
+	&--theme-transparent:not(:disabled) {
+		color: $primary;
+		background: transparent;
+		border-color: $primary;
+		&:hover {
+			border-color: $blue-light;
+			background: $blue-light;
+		}
+		&:active {
+			border-color: $blue-light;
+			background: $blue-light;
+		}
+	}
+}
