@@ -20,7 +20,7 @@ const Button = (props) => {
     color = 'blue',
     type = 'button',
     display = 'inline',
-    theme = 'dark',
+    theme = 'solid',
     isValid = true,
     disabled = false
   } = props;

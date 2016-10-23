@@ -31,5 +31,17 @@
 // Components
 // =====================
 
-@import '~components/shared/button.scss';
 @import '~components/home/welcomeBlock/welcomeBlock.scss';
+@import '~components/home/missionCategoryBlock/missionCategoryBlock.scss';
+@import '~components/home/homepageBlockHeader.scss';
+
+// =====================
+// Containers
+// =====================
+
+@import '~containers/home/homeView.scss';
+
+// =====================
+// Common Components -- need fix styles
+// =====================
+@import '~components/shared/button.scss';

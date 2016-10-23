@@ -16,5 +16,7 @@ export default {
   ****  Homepage   ****
   *******************************/
   "homepage.welcomeMessage": "FR Welcome!",
-  "homepage.facebookLogin.LoginButton": "FR Login with Facebook"
+  "homepage.facebookLogin.LoginButton": "FR Login with Facebook",
+  "homepage.missionCategory.headerLabel": "FR What do you need?",
+  "homepage.missionCategory.buttonLabel": "FR More"
 };

@@ -16,5 +16,7 @@ export default {
   ****  Homepage   ****
   *******************************/
   "homepage.welcomeMessage": "Welcome to Mision",
-  "homepage.facebookLogin.LoginButton": "Login with Facebook"
+  "homepage.facebookLogin.LoginButton": "Login with Facebook",
+  "homepage.missionCategory.headerLabel": "What do you need?",
+  "homepage.missionCategory.buttonLabel": "More"
 };
