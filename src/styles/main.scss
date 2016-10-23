@@ -1,0 +1,34 @@
+// =====================
+// Global Definitions
+// =====================
+
+@import '~styles/variables.scss';
+
+// =====================
+// 3RD PARTY
+// =====================
+
+// normalize
+@import '../../node_modules/normalize\.css/normalize.css';
+
+// sass-mq
+@import '../../node_modules/sass-mq/_mq.scss';
+
+// =====================
+// Core
+// =====================
+
+@import '~styles/base.scss';
+
+// =====================
+// Layouts
+// =====================
+
+@import '~layouts/CoreLayout/CoreLayout.scss';
+@import '~layouts/homepageBlock/homepageBlock.scss';
+
+// =====================
+// Components
+// =====================
+
+@import '~components/home/welcomeBlock/welcomeBlock.scss';

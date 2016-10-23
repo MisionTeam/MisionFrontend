@@ -1,8 +1,8 @@
 import React from 'react';
-import DuckImage from 'containers/home/assets/Duck.jpg';
 import 'containers/home/homeView.scss';
-import { FormattedMessage } from 'react-intl';
 
+import WelcomeBlock from 'components/home/welcomeBlock/welcomeBlock.jsx';
+import HomepageBlock from 'layouts/homepageBlock/homepageBlock.jsx';
 import LoginContainer from 'containers/login/loginContainer.jsx';
 
 class HomeContainer extends React.Component {
@@ -10,11 +10,9 @@ class HomeContainer extends React.Component {
     return (
       <div>
         <LoginContainer />
-        <h4><FormattedMessage id="Homepage.welcomeMessage" /></h4>
-        <img
-          alt="This is a duck, because Redux!"
-          className="duck"
-          src={DuckImage} />
+        <HomepageBlock className="welcome" >
+          <WelcomeBlock />
+        </HomepageBlock>
       </div>
     );
   }

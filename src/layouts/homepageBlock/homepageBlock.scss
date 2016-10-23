@@ -1,0 +1,7 @@
+.homepage-block {
+  &.homepage-block-welcome {
+    height: 890px;
+    background: url('../static/images/homepage/banner.jpg') no-repeat center center;
+    background-size: cover;
+  }
+}

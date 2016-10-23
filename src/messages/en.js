@@ -10,6 +10,6 @@ export default {
   /********************************
   ****  Homepage   ****
   *******************************/
-  "Homepage.welcomeMessage": "Welcome!",
+  "Homepage.welcomeMessage": "Welcome to Mision",
   "Homepage.facebookLogin.LoginButton": "Login with Facebook"
 };
