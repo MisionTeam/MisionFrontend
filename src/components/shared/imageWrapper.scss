@@ -1,0 +1,9 @@
+.image-wrapper {
+  display: inline-block;
+  margin: 10px;
+  &.image-wrapper-mission-category {
+    img {
+      width: 252px;
+    }
+  }
+}

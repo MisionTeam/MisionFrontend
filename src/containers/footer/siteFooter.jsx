@@ -2,10 +2,12 @@ import React from 'react';
 import classNames from 'classnames';
 import LocaleToggleContainer from 'containers/locale/localeToggleContainer.jsx';
 
-const MenuDesktop = (props) => {
+const SiteFooter = (props) => {
   return (
-    <LocaleToggleContainer />
+    <div className="site-footer">
+      <LocaleToggleContainer />
+    </div>
   );
 };
 
-export default MenuDesktop;
+export default SiteFooter;

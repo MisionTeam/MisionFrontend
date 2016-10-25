@@ -1,31 +1,32 @@
 import React from 'react';
 import classNames from 'classnames';
+import { FormattedMessage } from 'react-intl';
 
-const ImageWrapper = (props) => {
+const GeneralSubLabel = (props) => {
   const {
     className,
-    imageUrl
+    messageId
   } = props;
 
   const classes = classNames([
-    'image-wrapper',
-    `image-wrapper-${className}`
+    'general-sub-label',
+    className
   ]
   );
 
   return (
     <div className={classes}>
-      <img src={imageUrl} />
+      <FormattedMessage id={messageId} />
     </div>
   );
 };
 
-ImageWrapper.propTypes = {
+GeneralSubLabel.propTypes = {
   className: React.PropTypes.oneOfType([
     React.PropTypes.string,
     React.PropTypes.array
   ]),
-  imageUrl: React.PropTypes.string.isRequired
+  messageId: React.PropTypes.string.isRequired
 };
 
-export default ImageWrapper;
+export default GeneralSubLabel;

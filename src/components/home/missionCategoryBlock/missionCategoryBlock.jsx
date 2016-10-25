@@ -1,16 +1,11 @@
 import React from 'react';
-import { FormattedMessage } from 'react-intl';
 
 import HomepageBlockHeader from 'components/home/homepageBlockHeader.jsx';
 import ImageWrapper from 'components/shared/imageWrapper.jsx';
+import GeneralLabel from 'components/shared/generalLabel.jsx';
+import GeneralSubLabel from 'components/shared/generalSubLabel.jsx';
 
-import Image1 from 'static/images/homepage/1need.jpg';
-import Image2 from 'static/images/homepage/2need.jpg';
-
-const imageUrls = [
-  Image1,
-  Image2
-];
+import { missionCategoryImageUrls, missionCategoryLabelIds } from 'utils/constants.js';
 
 class MissionCategoryBlock extends React.Component {
   static contextTypes = {
@@ -22,8 +17,14 @@ class MissionCategoryBlock extends React.Component {
   }
 
   renderImageGrid() {
-    return imageUrls.map((imageUrl, index) => {
-      return <ImageWrapper className="mission-category" imageUrl={imageUrl} key={index} />;
+    return missionCategoryImageUrls.map((imageUrl, index) => {
+      return (
+        <div className="mission-category-grid-item" key={index}>
+          <ImageWrapper className="mission-category" imageUrl={imageUrl} />
+          <GeneralLabel messageId={missionCategoryLabelIds[index].labelId} className="mission-category" />
+          <GeneralSubLabel messageId={missionCategoryLabelIds[index].subLabelId} className="mission-category" />
+        </div>
+      );
     });
   }
 

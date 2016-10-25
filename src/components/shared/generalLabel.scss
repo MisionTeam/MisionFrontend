@@ -1,0 +1,9 @@
+.general-label {
+  color: $primary;
+  font-size: 18px;
+  text-align: left;
+
+  &.mission-category {
+    margin-left: 10px;
+  }
+}

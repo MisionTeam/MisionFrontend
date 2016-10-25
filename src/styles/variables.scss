@@ -1,25 +1,13 @@
 $white: #fff;
-$gray-lightest: #f0f0f0;
-$gray-lighter: #ddd;
-$gray-light: #bcbcbc;
-$gray-dark: #8a8a8a;
-$gray-darker: #585858;
-$gray-darkest: #191919;
-
 $primary: #4977F0;
+
 $blue: #4977F0;
 $blue-light: #80aef7;
-$secondary-success: #15c3a8;
-$secondary-success-icon: #0aa78f;
-$secondary-expiring: #0075ff;
-$secondary-error: #bf222d;
-$secondary-A: #7f141e;
-$secondary-B: #ff9192;
-$secondary-C: #fbd2d3;
+
+$gray: #999999;
 
 // If $gray-darkest ever changes from #191919, then
 // $division-market will need to be updated
-$division-market: $gray-darkest;
 $division-discount: #ffd700;
 $division-shoppers: #73b9e8;
 $division-joe-fresh: #ff4612;
