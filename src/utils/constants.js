@@ -68,9 +68,17 @@ const weHaveBlockLabelIds = [
   }
 ];
 
+const youCanBeBlockImageUrls = [
+  'images/homepage/can1.png',
+  'images/homepage/can2.png',
+  'images/homepage/can3.png',
+  'images/homepage/can4.png'
+];
+
 export {
   missionCategoryImageUrls,
   missionCategoryLabelIds,
   weHaveBlockImageUrls,
-  weHaveBlockLabelIds
+  weHaveBlockLabelIds,
+  youCanBeBlockImageUrls
 };

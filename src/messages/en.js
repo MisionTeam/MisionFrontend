@@ -46,4 +46,6 @@ export default {
   "homepage.weHaveBlock.imageSubLabel_2.bestSolutions": "sub 2",
   "homepage.weHaveBlock.imageSubLabel_1.trustyFriends": "sub 1",
   "homepage.weHaveBlock.imageSubLabel_2.trustyFriends": "sub 2",
+  "homepage.youCanBeBlock.headerLabel": "You Can Be?",
+  "homepage.youCanBeBlock.buttonLabel": "Add personal tag"
 };

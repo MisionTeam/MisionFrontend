@@ -15,4 +15,10 @@
     align-items: center;
     justify-content: center;
   }
+
+  &.image-wrapper-you-can-be {
+    img {
+      width: 222px;
+    }
+  }
 }

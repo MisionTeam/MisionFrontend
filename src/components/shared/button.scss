@@ -56,4 +56,16 @@
 			background: $blue-light;
 		}
 	}
+	&--white:not(:disabled) {
+		color: $white;
+		border-color: $white;
+		&:hover {
+			border-color: $blue-light;
+			background: $blue-light;
+		}
+		&:active {
+			border-color: $blue-light;
+			background: $blue-light;
+		}
+	}
 }

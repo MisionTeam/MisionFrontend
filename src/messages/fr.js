@@ -46,4 +46,6 @@ export default {
   "homepage.weHaveBlock.imageSubLabel_2.bestSolutions": "FR sub 2",
   "homepage.weHaveBlock.imageSubLabel_1.trustyFriends": "FR sub 1",
   "homepage.weHaveBlock.imageSubLabel_2.trustyFriends": "FR sub 2",
+  "homepage.youCanBeBlock.headerLabel": "FR You Can Be?",
+  "homepage.youCanBeBlock.buttonLabel": "FR Add personal tag"
 };
