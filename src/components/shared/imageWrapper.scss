@@ -1,9 +1,18 @@
 .image-wrapper {
   display: inline-block;
   margin: 10px;
+
   &.image-wrapper-mission-category {
     img {
       width: 252px;
     }
+  }
+
+  &.image-wrapper-we-have {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }

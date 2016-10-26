@@ -1,0 +1,19 @@
+.we-have-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px 0px;
+
+  &__content {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .we-have-grid-item {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+}

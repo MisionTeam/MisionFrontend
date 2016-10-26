@@ -44,7 +44,33 @@ const missionCategoryLabelIds = [
   }
 ];
 
+const weHaveBlockImageUrls = [
+  'images/homepage/have1.png',
+  'images/homepage/have2.png',
+  'images/homepage/have3.png'
+];
+
+const weHaveBlockLabelIds = [
+  {
+    labelId: 'homepage.weHaveBlock.imageLabel.freePlatform',
+    subLabelId_1: 'homepage.weHaveBlock.imageSubLabel_1.freePlatform',
+    subLabelId_2: 'homepage.weHaveBlock.imageSubLabel_2.freePlatform'
+  },
+  {
+    labelId: 'homepage.weHaveBlock.imageLabel.bestSolutions',
+    subLabelId_1: 'homepage.weHaveBlock.imageSubLabel_1.bestSolutions',
+    subLabelId_2: 'homepage.weHaveBlock.imageSubLabel_2.bestSolutions'
+  },
+  {
+    labelId: 'homepage.weHaveBlock.imageLabel.trustyFriends',
+    subLabelId_1: 'homepage.weHaveBlock.imageSubLabel_1.trustyFriends',
+    subLabelId_2: 'homepage.weHaveBlock.imageSubLabel_2.trustyFriends'
+  }
+];
+
 export {
   missionCategoryImageUrls,
-  missionCategoryLabelIds
+  missionCategoryLabelIds,
+  weHaveBlockImageUrls,
+  weHaveBlockLabelIds
 };
