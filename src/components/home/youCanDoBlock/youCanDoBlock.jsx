@@ -45,7 +45,7 @@ class YouCanDoBlock extends React.Component {
         </div>
         <div className="you-can-do__content">
           <div className="you-can-do__left-image-container">
-            <ImageWrapper className="you-can-do__left-image-container" imageUrl="images/homepage/can1.png" />
+            <ImageWrapper className="you-can-do__left-image-container" imageUrl="images/homepage/uicon.svg" />
           </div>
           <div className="you-can-do__right-image-container">
             {

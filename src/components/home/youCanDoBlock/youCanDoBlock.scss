@@ -19,8 +19,10 @@
   }
 
   &__left-image-container {
-    display: inline;
+    display: flex;
     flex-basis: 33%;
+    align-items: center;
+    justify-content: center;
   }
 
   &__right-image-container {
