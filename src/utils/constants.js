@@ -105,6 +105,21 @@ const youCanDoBlockLabelIds = [
   }
 ];
 
+const weAreBlockImageUrls = [
+  'images/homepage/1need.jpg',
+  'images/homepage/1need.jpg',
+  'images/homepage/1need.jpg'
+];
+
+const weAreBlockLabelIds = [
+  {
+    labelId: 'homepage.weAre.imageLabel',
+    subLabelId_1: 'homepage.weAre.imageSubLabel_1',
+    subLabelId_2: 'homepage.weAre.imageSubLabel_2',
+    subLabelId_3: 'homepage.weAre.imageSubLabel_3'
+  }
+];
+
 export {
   missionCategoryImageUrls,
   missionCategoryLabelIds,
@@ -112,5 +127,7 @@ export {
   weHaveBlockLabelIds,
   youCanBeBlockImageUrls,
   youCanDoBlockLabelIds,
-  youCanDoBlockImageUrls
+  youCanDoBlockImageUrls,
+  weAreBlockImageUrls,
+  weAreBlockLabelIds
 };

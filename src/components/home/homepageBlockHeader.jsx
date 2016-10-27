@@ -10,7 +10,8 @@ const HomepageBlockHeader = (props) => {
     onClick,
     color = 'blue',
     labelId,
-    buttonTextId
+    buttonTextId,
+    noButton
   } = props;
 
   const classes = classNames(
@@ -25,9 +26,13 @@ const HomepageBlockHeader = (props) => {
         <FormattedMessage id={labelId} />
       </div>
       <div className="homepage-block-header__nav-button">
-        <Button className={classes} color={color} theme="transparent" onClick={onClick}>
-          <FormattedMessage id={buttonTextId} />
-        </Button>
+        {
+          !noButton ? (
+            <Button className={classes} color={color} theme="transparent" onClick={onClick}>
+              <FormattedMessage id={buttonTextId} />
+            </Button>
+          ) : null
+        }
       </div>
     </div>
   );
@@ -43,7 +48,8 @@ HomepageBlockHeader.propTypes = {
   onClick: React.PropTypes.func,
   color: React.PropTypes.string,
   labelId: React.PropTypes.string.isRequired,
-  buttonTextId: React.PropTypes.string.isRequired
+  buttonTextId: React.PropTypes.string,
+  noButton: React.PropTypes.bool
 };
 
 export default HomepageBlockHeader;

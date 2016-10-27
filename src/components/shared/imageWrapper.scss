@@ -2,13 +2,13 @@
   display: inline-block;
   margin: 10px;
 
-  &.image-wrapper-mission-category {
+  &__mission-category {
     img {
       width: 252px;
     }
   }
 
-  &.image-wrapper-we-have {
+  &__we-have {
     width: 150px;
     height: 150px;
     display: flex;
@@ -16,7 +16,7 @@
     justify-content: center;
   }
 
-  &.image-wrapper-you-can-be {
+  &__you-can-be {
     img {
       width: 222px;
     }
@@ -24,5 +24,11 @@
 
   &.image-wrapper-you-can-do {
     // width: 220px;
+  }
+
+  &__we-are {
+    img {
+      width: 252px;  
+    }
   }
 }

@@ -9,7 +9,7 @@ const ImageWrapper = (props) => {
 
   const classes = classNames([
     'image-wrapper',
-    `image-wrapper-${className}`
+    `image-wrapper__${className}`
   ]
   );
 

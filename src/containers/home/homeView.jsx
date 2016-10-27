@@ -6,6 +6,7 @@ import MissionCategoryBlock from 'components/home/missionCategoryBlock/missionCa
 import WeHaveBlock from 'components/home/weHaveBlock/weHaveBlock.jsx';
 import YouCanBeBlock from 'components/home/youCanBeBlock/youCanBeBlock.jsx';
 import YouCanDoBlock from 'components/home/youCanDoBlock/youCanDoBlock.jsx';
+import WeAreBlock from 'components/home/weAreBlock/weAreBlock.jsx';
 import HomepageBlock from 'layouts/homepageBlock/homepageBlock.jsx';
 import LoginContainer from 'containers/login/loginContainer.jsx';
 
@@ -28,6 +29,9 @@ class HomeContainer extends React.Component {
         </HomepageBlock>
         <HomepageBlock className="you-can-do" >
           <YouCanDoBlock />
+        </HomepageBlock>
+        <HomepageBlock className="we-are" >
+          <WeAreBlock />
         </HomepageBlock>
       </div>
     );

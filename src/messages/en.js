@@ -61,5 +61,10 @@ export default {
   "homepage.youCanDo.imageSubLabel_1.ownBoss": "sub 1",
   "homepage.youCanDo.imageSubLabel_2.ownBoss": "sub 2",
   "homepage.youCanDo.imageSubLabel_1.makingFriends": "sub 1",
-  "homepage.youCanDo.imageSubLabel_2.makingFriends": "sub 2"
+  "homepage.youCanDo.imageSubLabel_2.makingFriends": "sub 2",
+  "homepage.weAre.headerLabel": "We Are?",
+  "homepage.weAre.imageLabel": "The Mision Team",
+  "homepage.weAre.imageSubLabel_1": "sub 1",
+  "homepage.weAre.imageSubLabel_2": "sub 2",
+  "homepage.weAre.imageSubLabel_3": "sub 3"
 };
