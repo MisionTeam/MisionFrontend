@@ -75,10 +75,42 @@ const youCanBeBlockImageUrls = [
   'images/homepage/can4.png'
 ];
 
+const youCanDoBlockImageUrls = [
+  'images/homepage/u1.svg',
+  'images/homepage/u2.svg',
+  'images/homepage/u3.svg',
+  'images/homepage/u4.svg'
+];
+
+const youCanDoBlockLabelIds = [
+  {
+    labelId: 'homepage.youCanDo.imageLabel.personalSkills',
+    subLabelId_1: 'homepage.youCanDo.imageSubLabel_1.personalSkills',
+    subLabelId_2: 'homepage.youCanDo.imageSubLabel_2.personalSkills'
+  },
+  {
+    labelId: 'homepage.youCanDo.imageLabel.spareTimeMoney',
+    subLabelId_1: 'homepage.youCanDo.imageSubLabel_1.spareTimeMoney',
+    subLabelId_2: 'homepage.youCanDo.imageSubLabel_2.spareTimeMoney'
+  },
+  {
+    labelId: 'homepage.youCanDo.imageLabel.ownBoss',
+    subLabelId_1: 'homepage.youCanDo.imageSubLabel_1.ownBoss',
+    subLabelId_2: 'homepage.youCanDo.imageSubLabel_2.ownBoss'
+  },
+  {
+    labelId: 'homepage.youCanDo.imageLabel.makingFriends',
+    subLabelId_1: 'homepage.youCanDo.imageSubLabel_1.makingFriends',
+    subLabelId_2: 'homepage.youCanDo.imageSubLabel_2.makingFriends'
+  }
+];
+
 export {
   missionCategoryImageUrls,
   missionCategoryLabelIds,
   weHaveBlockImageUrls,
   weHaveBlockLabelIds,
-  youCanBeBlockImageUrls
+  youCanBeBlockImageUrls,
+  youCanDoBlockLabelIds,
+  youCanDoBlockImageUrls
 };

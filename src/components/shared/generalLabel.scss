@@ -2,12 +2,18 @@
   color: $primary;
   font-size: 18px;
   text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
 
   &.mission-category {
     margin-left: 10px;
   }
 
   &.we-have {
+    text-align: center;
+  }
+
+  &.you-can-do {
     text-align: center;
   }
 }

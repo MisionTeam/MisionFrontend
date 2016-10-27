@@ -8,4 +8,9 @@
   &.homepage-block-you-can-be {
     background-color: $blue-background;
   }
+
+  &.homepage-block-you-can-do {
+    background: url('../static/images/homepage/youcandobg.jpg') no-repeat center center;
+    background-size: cover;
+  }
 }

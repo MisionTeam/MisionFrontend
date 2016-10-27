@@ -47,5 +47,19 @@ export default {
   "homepage.weHaveBlock.imageSubLabel_1.trustyFriends": "FR sub 1",
   "homepage.weHaveBlock.imageSubLabel_2.trustyFriends": "FR sub 2",
   "homepage.youCanBeBlock.headerLabel": "FR You Can Be?",
-  "homepage.youCanBeBlock.buttonLabel": "FR Add personal tag"
+  "homepage.youCanBeBlock.buttonLabel": "FR Add personal tag",
+  "homepage.youCanDo.headerLabel": "FR You can do?",
+  "homepage.youCanDo.buttonLabel": "FR Take a mission",
+  "homepage.youCanDo.imageLabel.personalSkills": "FR Show case your personal skills",
+  "homepage.youCanDo.imageLabel.spareTimeMoney": "FR Earn money on your free time",
+  "homepage.youCanDo.imageLabel.ownBoss": "FR Be your own boss",
+  "homepage.youCanDo.imageLabel.makingFriends": "FR Making some new friends",
+  "homepage.youCanDo.imageSubLabel_1.personalSkills": "FR sub 1",
+  "homepage.youCanDo.imageSubLabel_2.personalSkills": "FR sub 2",
+  "homepage.youCanDo.imageSubLabel_1.spareTimeMoney": "FR sub 1",
+  "homepage.youCanDo.imageSubLabel_2.spareTimeMoney": "FR sub 2",
+  "homepage.youCanDo.imageSubLabel_1.ownBoss": "FR sub 1",
+  "homepage.youCanDo.imageSubLabel_2.ownBoss": "FR sub 2",
+  "homepage.youCanDo.imageSubLabel_1.makingFriends": "FR sub 1",
+  "homepage.youCanDo.imageSubLabel_2.makingFriends": "FR sub 2"
 };
