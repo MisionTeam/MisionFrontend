@@ -13,4 +13,8 @@
     background: url('../static/images/homepage/youcandobg.jpg') no-repeat center center;
     background-size: cover;
   }
+
+  &.homepage-block-homepage-footer {
+    background-color: $blue-background;
+  }
 }

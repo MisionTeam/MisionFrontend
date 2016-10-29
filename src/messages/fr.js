@@ -66,5 +66,6 @@ export default {
   "homepage.weAre.imageLabel": "FR The Mision Team",
   "homepage.weAre.imageSubLabel_1": "FR sub 1",
   "homepage.weAre.imageSubLabel_2": "FR sub 2",
-  "homepage.weAre.imageSubLabel_3": "FR sub 3"
+  "homepage.weAre.imageSubLabel_3": "FR sub 3",
+  "homepage.footer.contactButton": "FR Contact Us"
 };

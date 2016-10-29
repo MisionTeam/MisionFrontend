@@ -7,13 +7,14 @@ import WeHaveBlock from 'components/home/weHaveBlock/weHaveBlock.jsx';
 import YouCanBeBlock from 'components/home/youCanBeBlock/youCanBeBlock.jsx';
 import YouCanDoBlock from 'components/home/youCanDoBlock/youCanDoBlock.jsx';
 import WeAreBlock from 'components/home/weAreBlock/weAreBlock.jsx';
+import HomepageFooter from 'components/home/footer/homepageFooter.jsx';
 import HomepageBlock from 'layouts/homepageBlock/homepageBlock.jsx';
 import LoginContainer from 'containers/login/loginContainer.jsx';
 
 class HomeContainer extends React.Component {
   render() {
     return (
-      <div>
+      <div className="home-view">
         <LoginContainer />
         <HomepageBlock className="welcome" >
           <WelcomeBlock />
@@ -32,6 +33,9 @@ class HomeContainer extends React.Component {
         </HomepageBlock>
         <HomepageBlock className="we-are" >
           <WeAreBlock />
+        </HomepageBlock>
+        <HomepageBlock className="homepage-footer" >
+          <HomepageFooter />
         </HomepageBlock>
       </div>
     );
