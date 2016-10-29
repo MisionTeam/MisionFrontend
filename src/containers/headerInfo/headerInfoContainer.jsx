@@ -21,16 +21,17 @@ class HeaderInfoContainer extends React.Component {
     getUserProfile: React.PropTypes.func.isRequired
   };
 
-  componentWillMount() {
-    this.componentWillReceiveProps(this.props);
+  componentDidMount() {
+    this.handleGetUserProfile();
   }
 
-  componentWillReceiveProps(props) {
-    props.getUserProfile();
+  @autobind
+  handleGetUserProfile() {
+    this.props.getUserProfile();
   }
 
   render() {
-    const member = this.props.profile.member;
+    const member = this.props.profile.member.toJS();
     return (
       <div className="header-info">
         {member.firstName} {member.lastName}

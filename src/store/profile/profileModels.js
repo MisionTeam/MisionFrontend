@@ -6,12 +6,10 @@ const Member = Immutable.Record({
 });
 
 const Profile = Immutable.Record({
-  member: new Member({
-    firstName: 'Kobe',
-    lastName: 'Bryant'
-  })
+  member: new Member()
 });
 
 export {
+  Member,
   Profile as InitialState
 };
