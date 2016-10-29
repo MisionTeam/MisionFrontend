@@ -6,6 +6,7 @@ import restrictedRoute from 'routes/restrictedRoute.jsx';
 
 import CoreLayout from '../layouts/CoreLayout/CoreLayout';
 import HomeContainer from 'containers/home/homeView.jsx';
+import ProfileContainer from 'containers/profile/profileContainer.jsx';
 import ErrorPageContainer from 'containers/errorPage/errorPage.jsx';
 
 @connect()
@@ -31,6 +32,7 @@ const routes = (
     <IndexRedirect to="/home" />
     <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
+    <Route path="profile" component={restrictedRoute({component: ProfileContainer})} />
     <Route path="error" component={restrictedRoute({component: ErrorPageContainer})} />
   </Route>
 );
