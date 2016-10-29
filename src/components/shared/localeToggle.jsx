@@ -1,5 +1,6 @@
 import React from 'react';
 import classnames from 'classnames';
+import Button from 'components/shared/button.jsx';
 
 class LocaleToggle extends React.Component {
   static propTypes = {
@@ -28,23 +29,22 @@ class LocaleToggle extends React.Component {
       this.props.currentLocale !== 'fr' && 'locale-toggle__link--clickable'
     );
 
-    const currentLocaleClasses = this.props.currentLocale === 'en' ? enClasses : frClasses;
-    const currentLocaleText = this.props.currentLocale === 'en' ? 'EN' : 'FR';
+    // const currentLocaleClasses = this.props.currentLocale === 'en' ? enClasses : frClasses;
+    // const currentLocaleText = this.props.currentLocale === 'en' ? 'EN' : 'FR';
 
     const availableLocaleClasses = this.props.currentLocale === 'en' ? frClasses : enClasses;
     const availableLocaleText = this.props.currentLocale === 'en' ? 'FR' : 'EN';
 
     return (
       <div className={containerClasses}>
-        <button
-          type="button"
+        <Button
+          theme="transparent"
+          color="white"
           className={availableLocaleClasses}
           onClick={this.props.handleLocaleToggleClick}
         >
           {availableLocaleText}
-        </button>
-        <span className="locale-toggle__bullet">•</span>
-        <span className={currentLocaleClasses}>{currentLocaleText}</span>
+        </Button>
       </div>
     );
   }

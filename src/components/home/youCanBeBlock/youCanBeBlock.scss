@@ -1,0 +1,19 @@
+.you-can-be-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px 0px;
+
+  &__content {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .you-can-be__grid-item {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+}

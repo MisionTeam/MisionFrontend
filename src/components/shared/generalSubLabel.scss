@@ -1,0 +1,15 @@
+.general-sub-label {
+  color: $gray;
+  font-size: 14px;
+  text-align: left;
+  margin-top: 0px;
+  margin-bottom: 0px;
+
+  &.mission-category {
+    margin-left: 10px;
+  }
+
+  &.we-have {
+    text-align: center;
+  }
+}

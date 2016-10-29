@@ -1,0 +1,57 @@
+// =====================
+// Global Definitions
+// =====================
+
+@import '~styles/variables.scss';
+
+// =====================
+// 3RD PARTY
+// =====================
+
+// normalize
+@import '../../node_modules/normalize\.css/normalize.css';
+
+// sass-mq
+@import '../../node_modules/sass-mq/_mq.scss';
+
+// =====================
+// Core
+// =====================
+
+@import '~styles/base.scss';
+
+// =====================
+// Layouts
+// =====================
+
+@import '~layouts/CoreLayout/CoreLayout.scss';
+@import '~layouts/pointer/pointer.scss';
+@import '~layouts/homepageBlock/homepageBlock.scss';
+
+// =====================
+// Components
+// =====================
+
+@import '~components/home/welcomeBlock/welcomeBlock.scss';
+@import '~components/home/missionCategoryBlock/missionCategoryBlock.scss';
+@import '~components/home/weHaveBlock/weHaveBlock.scss';
+@import '~components/home/youCanBeBlock/youCanBeBlock.scss';
+@import '~components/home/youCanDoBlock/youCanDoBlock.scss';
+@import '~components/home/weAreBlock/weAreBlock.scss';
+@import '~components/home/footer/homepageFooter.scss';
+@import '~components/home/homepageBlockHeader.scss';
+
+// =====================
+// Containers
+// =====================
+
+@import '~containers/home/homeView.scss';
+@import '~containers/errorPage/errorPage.scss';
+
+// =====================
+// Common Components -- need fix styles
+// =====================
+@import '~components/shared/button.scss';
+@import '~components/shared/imageWrapper.scss';
+@import '~components/shared/generalLabel.scss';
+@import '~components/shared/generalSubLabel.scss';

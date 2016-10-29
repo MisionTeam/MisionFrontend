@@ -1,0 +1,15 @@
+.mission-category-block {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 50px 0px;
+  &__header {
+  }
+  &__content {
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+}

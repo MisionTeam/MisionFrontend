@@ -1,0 +1,20 @@
+.homepage-block {
+  &.homepage-block-welcome {
+    height: 890px;
+    background: url('../static/images/homepage/banner.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  &.homepage-block-you-can-be {
+    background-color: $blue-background;
+  }
+
+  &.homepage-block-you-can-do {
+    background: url('../static/images/homepage/youcandobg.jpg') no-repeat center center;
+    background-size: cover;
+  }
+
+  &.homepage-block-homepage-footer {
+    background-color: $blue-background;
+  }
+}

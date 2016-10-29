@@ -1,0 +1,20 @@
+.error-page {
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 50px 0px;
+  }
+
+  .image-wrapper {
+    img {
+      width: 250px;
+    }
+  }
+}

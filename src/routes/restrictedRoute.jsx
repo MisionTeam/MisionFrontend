@@ -10,6 +10,11 @@ const connectDispatch = (dispatch) => ({
   push: (location) => dispatch(push(location))
 });
 
+const unrestrcitedPathNames = [
+  '/home',
+  '/error'
+];
+
 function restrictedRoute({
   component: WrappedComponent
 }) {
@@ -29,7 +34,7 @@ function restrictedRoute({
 
     checkAuthAndRedirect(props) {
       const { auth } = props;
-      if (auth.toJS().isLoggedIn || location.pathname === '/home') {
+      if (auth.toJS().isLoggedIn || unrestrcitedPathNames.includes(location.pathname)) {
         return;
       }
       this.redirect(auth);
@@ -40,7 +45,7 @@ function restrictedRoute({
     }
 
     render() {
-      return this.props.auth.isLoggedIn || location.pathname === '/home' ? <WrappedComponent {...this.props} /> : null;
+      return this.props.auth.isLoggedIn || unrestrcitedPathNames.includes(location.pathname) ? <WrappedComponent {...this.props} /> : null;
     }
   }
 

@@ -1,0 +1,30 @@
+.image-wrapper {
+  display: inline-block;
+  margin: 10px;
+
+  &__mission-category {
+    img {
+      width: 252px;
+    }
+  }
+
+  &__we-have {
+    width: 150px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__you-can-be {
+    img {
+      width: 222px;
+    }
+  }
+
+  &__we-are {
+    img {
+      width: 252px;
+    }
+  }
+}

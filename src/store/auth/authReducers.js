@@ -7,7 +7,6 @@ import * as AuthModels from 'store/auth/authModels.js';
 export const authReducer = handleActions({
 
   [authActions.userLogin().type]: (state) => {
-    console.log(state);
     return state.merge({
       isLoggedIn: true
     });
@@ -20,14 +19,12 @@ export const authReducer = handleActions({
   },
 
   [authActions.userLoginFailed().type]: (state) => {
-    console.log(state);
     return state.merge({
       isLoggedIn: false
     });
   },
 
   [facebookLoginActions.getFacebookLoginStatus().type]: (state, action) => {
-    console.log(action);
     return state.mergeDeep({
       facebookLogin: action.payload
     });

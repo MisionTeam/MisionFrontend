@@ -1,0 +1,24 @@
+.homepage-block-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin: 0px;
+  &--blue {
+    color: $primary;
+  }
+
+  &--white {
+    color: $white;
+  }
+
+  &__label {
+    display: flex;
+    font-size: 30px;
+    align-items: center;
+  }
+
+  &__nav-button {
+    display: inline;
+  }
+}
