@@ -13,8 +13,9 @@
   }
 
   &__label {
-    display: inline;
+    display: flex;
     font-size: 30px;
+    align-items: center;
   }
 
   &__nav-button {

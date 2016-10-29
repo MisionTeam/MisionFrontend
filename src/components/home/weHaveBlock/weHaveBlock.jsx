@@ -19,7 +19,7 @@ class WeHaveBlock extends React.Component {
   renderImageGrid() {
     return weHaveBlockImageUrls.map((imageUrl, index) => {
       return (
-        <div className="we-have-grid-item" key={index}>
+        <div className="we-have__grid-item" key={index}>
           <ImageWrapper className="we-have" imageUrl={imageUrl} />
           <GeneralLabel messageId={weHaveBlockLabelIds[index].labelId} className="we-have" />
           <GeneralSubLabel messageId={weHaveBlockLabelIds[index].subLabelId_1} className="we-have" />

@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import classNames from 'classnames';
 
 import Button from 'components/shared/button.jsx';
+import Pointer from 'layouts/pointer/pointer.jsx';
 
 const HomepageBlockHeader = (props) => {
   const {
@@ -23,6 +24,7 @@ const HomepageBlockHeader = (props) => {
   const template = (
     <div className={classes}>
       <div className="homepage-block-header__label">
+        <Pointer color={color} />
         <FormattedMessage id={labelId} />
       </div>
       <div className="homepage-block-header__nav-button">

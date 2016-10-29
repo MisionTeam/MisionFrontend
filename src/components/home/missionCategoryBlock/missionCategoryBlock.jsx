@@ -19,7 +19,7 @@ class MissionCategoryBlock extends React.Component {
   renderImageGrid() {
     return missionCategoryImageUrls.map((imageUrl, index) => {
       return (
-        <div className="mission-category-grid-item" key={index}>
+        <div className="mission-category__grid-item" key={index}>
           <ImageWrapper className="mission-category" imageUrl={imageUrl} />
           <GeneralLabel messageId={missionCategoryLabelIds[index].labelId} className="mission-category" />
           <GeneralSubLabel messageId={missionCategoryLabelIds[index].subLabelId} className="mission-category" />

@@ -17,7 +17,7 @@ class YouCanBeBlock extends React.Component {
   renderImageGrid() {
     return youCanBeBlockImageUrls.map((imageUrl, index) => {
       return (
-        <div className="you-can-be-grid-item" key={index}>
+        <div className="you-can-be__grid-item" key={index}>
           <ImageWrapper className="you-can-be" imageUrl={imageUrl} />
         </div>
       );
