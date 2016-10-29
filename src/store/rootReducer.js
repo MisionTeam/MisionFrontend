@@ -4,11 +4,13 @@ import locationReducer from 'store/location';
 import { authReducer as auth } from 'store/auth/authReducers.js';
 import { profileReducer as profile } from 'store/profile/profileReducers.js';
 import { localeReducer as locale } from 'store/locale/locale.js';
+import { errorReducer as error } from 'store/error/errorReducers.js';
 
 const reducerMap = {
   auth,
   profile,
-  locale
+  locale,
+  error
 };
 
 export const rootReducer = (asyncReducers) => {

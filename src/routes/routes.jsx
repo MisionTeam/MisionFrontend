@@ -6,7 +6,9 @@ import restrictedRoute from 'routes/restrictedRoute.jsx';
 
 import CoreLayout from '../layouts/CoreLayout/CoreLayout';
 import HomeContainer from 'containers/home/homeView.jsx';
+import ErrorPageContainer from 'containers/errorPage/errorPage.jsx';
 
+@connect()
 class RouterRoot extends React.Component {
   static propTypes = {
     children: React.PropTypes.oneOfType([
@@ -29,6 +31,7 @@ const routes = (
     <IndexRedirect to="/home" />
     <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
+    <Route path="error" component={restrictedRoute({component: ErrorPageContainer})} />
   </Route>
 );
 

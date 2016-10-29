@@ -13,6 +13,12 @@ export default {
   "common.postMission": "Post a Mission",
 
   /********************************
+  ****  System Error   ****
+  *******************************/
+  "systemError.generalErrorPlaceholder.id": "ERROR",
+  "systemError.generalErrorPlaceholder.description": "Oops, a wild error appeared!",
+
+  /********************************
   ****  Homepage   ****
   *******************************/
   "homepage.welcomeMessage": "Welcome to Mision",
