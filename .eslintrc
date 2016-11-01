@@ -46,7 +46,8 @@
     "jsx-quotes": ["error", "prefer-double"],
 		"linebreak-style": [
 			"error",
-			"unix"
+			"unix",
+      "windows"
 		],
 		"max-len": [
 			"off"
@@ -71,7 +72,7 @@
 		"no-underscore-dangle": [
 			"off"
 		],
-    operator-linebreak: ["off"],
+    "operator-linebreak": ["off"],
 		"quotes": [
 			"error",
 			"single"
@@ -104,5 +105,5 @@
       "error",
       "never"
     ]
-	},
+	}
 }
