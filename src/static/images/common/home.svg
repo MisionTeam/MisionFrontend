@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="29px" height="33px" viewBox="0 0 29 33" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>1</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mine" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linejoin="round">
+        <g transform="translate(-1096.000000, -48.000000)" id="top" stroke="#CCCCCC" stroke-width="3">
+            <g transform="translate(0.000000, -1.000000)">
+                <g id="Group" transform="translate(1098.000000, 44.000000)">
+                    <g id="1" transform="translate(0.000000, 7.000000)">
+                        <path d="M7.5,28.6363636 L0.597272727,28.6363636 C0.267272727,28.6363636 0,28.4427273 0,28.1311364 L0,10.9090909" id="Stroke-459"></path>
+                        <path d="M24.5454545,11.5909091 L24.5454545,28.1311364 C24.5454545,28.4427273 24.2781818,28.6363636 23.9481818,28.6363636 L16.3636364,28.6363636" id="Stroke-460"></path>
+                        <polyline id="Stroke-461" stroke-linecap="round" points="24.5454545 11.5136591 12.2727273 0.000477272727 0 11.2020682"></polyline>
+                        <polyline id="Stroke-462" points="8.18181818 30 8.18181818 19.7727273 16.3636364 19.7727273 16.3636364 30"></polyline>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

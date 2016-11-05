@@ -32,6 +32,10 @@ html {
 	padding-left: $min-content-width-gutter;
 	padding-right: $min-content-width-gutter;
 
+	&.profile {
+		display: flex;
+	}
+
 	@include mq(tablet) {
 		padding-left: $tablet-gutter;
 		padding-right: $tablet-gutter;
