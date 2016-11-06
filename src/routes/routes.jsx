@@ -32,6 +32,8 @@ const routes = (
     <IndexRedirect to="/home" />
     <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
+    <Route path="post" component={HomeContainer} />
+    <Route path="get" component={HomeContainer} />
     <Route path="profile">
       <IndexRoute component={restrictedRoute({component: ProfileContainer})} />
       <Route path="info" component={restrictedRoute({component: ProfileContainer})} />

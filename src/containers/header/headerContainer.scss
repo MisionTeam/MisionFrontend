@@ -1,6 +1,24 @@
 .header {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  background-color: #ff4612;
+  &__container {
+    display: flex;
+    justify-content: space-around;
+    background-color: $white;
+  }
+
+  &__logo-wrapper {
+    display: flex;
+    flex-basis: 60%;
+  }
+
+  &__nav-link-wrapper {
+    display: flex;
+    flex-basis: 40%;
+    justify-content: space-around;
+  }
+
+  &__link-row {
+    &.active {
+      border-bottom: 3px solid black;
+    }
+  }
 }

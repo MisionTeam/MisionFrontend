@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="32px" height="34px" viewBox="0 0 32 34" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 40.3 (33839) - http://www.bohemiancoding.com/sketch -->
+    <title>3</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="mine" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-linecap="round" stroke-linejoin="round">
+        <g transform="translate(-1347.000000, -48.000000)" id="top" stroke="#CCCCCC" stroke-width="3">
+            <g transform="translate(0.000000, -1.000000)">
+                <g id="Group" transform="translate(1098.000000, 44.000000)">
+                    <g id="3" transform="translate(251.000000, 7.000000)">
+                        <polyline id="Stroke-212" points="0 22 0 29.6923077 27.6923077 29.6923077 27.6923077 22"></polyline>
+                        <polyline id="Stroke-214" points="14.0707692 0 14 21.5384615 24.4723077 11.5092308"></polyline>
+                        <path d="M14.2969231,22.01 L4,12" id="Stroke-216"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

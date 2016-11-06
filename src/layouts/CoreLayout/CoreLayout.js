@@ -3,7 +3,6 @@ import HeaderContainer from 'containers/header/headerContainer.jsx';
 
 export const CoreLayout = ({ children }) => (
   <div className="text-center">
-    <HeaderContainer />
     <div className="core-layout__viewport">
       {children}
     </div>

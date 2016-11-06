@@ -1,6 +1,7 @@
 import React from 'react';
 import 'containers/home/homeView.scss';
 
+import HeaderContainer from 'containers/header/headerContainer.jsx';
 import WelcomeBlock from 'components/home/welcomeBlock/welcomeBlock.jsx';
 import MissionCategoryBlock from 'components/home/missionCategoryBlock/missionCategoryBlock.jsx';
 import WeHaveBlock from 'components/home/weHaveBlock/weHaveBlock.jsx';
@@ -15,6 +16,7 @@ class HomeContainer extends React.Component {
   render() {
     return (
       <div className="home-view">
+        <HeaderContainer />
         <LoginContainer />
         <HomepageBlock className="welcome" >
           <WelcomeBlock />
