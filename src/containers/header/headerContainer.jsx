@@ -19,6 +19,11 @@ class HeaderContainer extends React.Component {
       <div className="header">
         header
         <ImageWrapper className="header" imageUrl="images/common/mision_black.svg" />
+        <ImageWrapper className="header" imageUrl="images/common/u1_black.svg" />
+        <ImageWrapper className="header" imageUrl="images/common/u2_black.svg" />
+        <ImageWrapper className="header" imageUrl="images/common/u3_black.svg" />
+        <ImageWrapper className="header" imageUrl="images/common/u4_black.svg" />
+        <ImageWrapper className="header" imageUrl="images/common/uicon_black.svg" />
       </div>
     );
   }

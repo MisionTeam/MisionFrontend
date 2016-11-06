@@ -44,11 +44,10 @@
 			}
 		],
     "jsx-quotes": ["error", "prefer-double"],
-		"linebreak-style": [
+		/*"linebreak-style": [
 			"error",
-			"unix",
       "windows"
-		],
+		],*/
 		"max-len": [
 			"off"
 		],
