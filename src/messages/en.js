@@ -73,5 +73,12 @@ export default {
   "homepage.weAre.imageSubLabel_1": "sub 1",
   "homepage.weAre.imageSubLabel_2": "sub 2",
   "homepage.weAre.imageSubLabel_3": "sub 3",
-  "homepage.footer.contactButton": "Contact Us"
+  "homepage.footer.contactButton": "Contact Us",
+
+  /********************************
+  ****  Common   ****
+  *******************************/
+  "sideNavBar.linkLabel.dashboard": "Dashboard",
+  "sideNavBar.linkLabel.myList": "My List",
+  "sideNavBar.linkLabel.notifications": "Notifications",
 };

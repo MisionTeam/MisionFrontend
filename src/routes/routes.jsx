@@ -32,7 +32,13 @@ const routes = (
     <IndexRedirect to="/home" />
     <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
-    <Route path="profile" component={restrictedRoute({component: ProfileContainer})} />
+    <Route path="profile">
+      <IndexRoute component={restrictedRoute({component: ProfileContainer})} />
+      <Route path="info" component={restrictedRoute({component: ProfileContainer})} />
+      <Route path="dashboard" component={restrictedRoute({component: ProfileContainer})} />
+      <Route path="mylist" component={restrictedRoute({component: ProfileContainer})} />
+      <Route path="notifications" component={restrictedRoute({component: ProfileContainer})} />
+    </Route>
     <Route path="error" component={restrictedRoute({component: ErrorPageContainer})} />
   </Route>
 );
