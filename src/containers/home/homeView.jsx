@@ -1,7 +1,6 @@
 import React from 'react';
 import 'containers/home/homeView.scss';
 
-import HeaderContainer from 'containers/header/headerContainer.jsx';
 import WelcomeBlock from 'components/home/welcomeBlock/welcomeBlock.jsx';
 import MissionCategoryBlock from 'components/home/missionCategoryBlock/missionCategoryBlock.jsx';
 import WeHaveBlock from 'components/home/weHaveBlock/weHaveBlock.jsx';
@@ -10,14 +9,12 @@ import YouCanDoBlock from 'components/home/youCanDoBlock/youCanDoBlock.jsx';
 import WeAreBlock from 'components/home/weAreBlock/weAreBlock.jsx';
 import HomepageFooter from 'components/home/footer/homepageFooter.jsx';
 import HomepageBlock from 'layouts/homepageBlock/homepageBlock.jsx';
-import LoginContainer from 'containers/login/loginContainer.jsx';
+// import LoginContainer from 'containers/login/loginContainer.jsx';
 
 class HomeContainer extends React.Component {
   render() {
     return (
       <div className="home-view">
-        <HeaderContainer />
-        <LoginContainer />
         <HomepageBlock className="welcome" >
           <WelcomeBlock />
         </HomepageBlock>

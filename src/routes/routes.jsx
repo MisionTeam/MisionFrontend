@@ -5,6 +5,7 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router';
 import restrictedRoute from 'routes/restrictedRoute.jsx';
 
 import CoreLayout from '../layouts/CoreLayout/CoreLayout';
+import HeaderContainer from 'containers/header/headerContainer.jsx';
 import HomeContainer from 'containers/home/homeView.jsx';
 import ProfileContainer from 'containers/profile/profileContainer.jsx';
 import ErrorPageContainer from 'containers/errorPage/errorPage.jsx';
@@ -15,7 +16,8 @@ class RouterRoot extends React.Component {
     children: React.PropTypes.oneOfType([
       React.PropTypes.array,
       React.PropTypes.element
-    ])
+    ]),
+    location: React.PropTypes.object.isRequired
   };
 
   static contextTypes = {
@@ -23,7 +25,11 @@ class RouterRoot extends React.Component {
   };
 
   render() {
-    return <CoreLayout children={this.props.children} />;
+    return (
+      <div>
+        <CoreLayout children={this.props.children} location={this.props.location} />
+      </div>
+    );
   };
 }
 
