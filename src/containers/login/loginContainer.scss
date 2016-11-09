@@ -1,0 +1,11 @@
+.login-container {
+  &__logged-in-block {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .header-info {
+    margin-right: 1em;
+  }
+}

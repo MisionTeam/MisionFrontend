@@ -1,11 +1,11 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
-import { Button } from 'react-bootstrap';
 import { push } from 'react-router-redux';
 
 import { processUserLogin } from 'store/auth/authActions.js';
 import { processgetFacebookLoginStatus } from 'store/facebookLogin/facebookLoginActions.js';
+import Button from 'components/shared/button.jsx';
 
 const connectState = (state) => ({
   auth: state.app.auth
@@ -86,7 +86,7 @@ class FacebookLoginContainer extends React.Component {
 
   render() {
     return (
-      <Button className="facebook-login-button" bsStyle="primary" onClick={this.handleFacebookLogin} >Login with Facebook</Button>
+      <Button className="facebook-login-button" onClick={this.handleFacebookLogin} >Login with Facebook</Button>
     );
   }
 }

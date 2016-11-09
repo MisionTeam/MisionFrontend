@@ -1,10 +1,10 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
-import { Button } from 'react-bootstrap';
 
 import FacebookLoginContainer from 'containers/facebookLogin/FacebookLoginContainer.jsx';
 import HeaderInfoContainer from 'containers/headerInfo/HeaderInfoContainer.jsx';
+import Button from 'components/shared/button.jsx';
 
 import { processUserLogin, processUserLogout } from 'store/auth/authActions.js';
 
@@ -38,9 +38,9 @@ class LoginContainer extends React.Component {
       <div className="login-container">
         {
           auth.isLoggedIn ?
-            <div>
+            <div className="login-container__logged-in-block">
               <HeaderInfoContainer />
-              <Button className="logout-button" bsStyle="primary" onClick={this.handleLogout} >Log out</Button>
+              <Button className="logout-button" onClick={this.handleLogout} >Log out</Button>
             </div> : <FacebookLoginContainer />
         }
       </div>
