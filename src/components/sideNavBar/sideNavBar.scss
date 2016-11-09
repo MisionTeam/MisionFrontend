@@ -14,10 +14,9 @@
 
   &__link-row {
     width: 100%;
-    padding: 0px 30px;
+    padding: 10px 30px;
     display: flex;
     justify-content: flex-start;
-    margin: 10px 0px;
 
     &.active {
       background: $blue;

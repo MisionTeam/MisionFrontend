@@ -153,9 +153,11 @@
     "react-router-redux": "^4.0.6",
     "redbox-react": "^1.2.10",
     "redux-actions": "^0.12.0",
+    "redux-form": "^6.2.0",
     "sass-mq": "^3.2.9",
     "sinon": "^1.17.5",
     "sinon-chai": "^2.8.0",
+    "validator": "^6.1.0",
     "webpack-dev-middleware": "^1.6.1",
     "webpack-hot-middleware": "^2.12.2"
   }
