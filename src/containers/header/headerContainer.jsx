@@ -35,7 +35,7 @@ class HeaderContainer extends React.Component {
               <div className="header__link-row">
                 <div className="header__link-wrapper">
                   <Link className="header__logo-link" to="/home">
-                    <ImageWrapper className="header__logo-icon" imageUrl="images/common/mision_black.svg" />
+                    <ImageWrapper className="header__logo-icon" imageUrl="/images/common/mision_black.svg" />
                   </Link>
                 </div>
               </div>
@@ -44,21 +44,21 @@ class HeaderContainer extends React.Component {
               <div className={this.activeClassNameGenerator('header__link-row', ['/home', '/'])}>
                 <div className="header__link-wrapper">
                   <Link className="header__home-link" activeClassName="home-link--active" to="/home">
-                    <ImageWrapper className="header__home-link-icon" imageUrl="images/common/homelink.svg" />
+                    <ImageWrapper className="header__home-link-icon" imageUrl="/images/common/homelink.svg" />
                   </Link>
                 </div>
               </div>
               <div className={this.activeClassNameGenerator('header__link-row', ['/post'])}>
                 <div className="header__link-wrapper">
                   <Link className="header__post-link" activeClassName="post-link--active" to="/post">
-                    <ImageWrapper className="header__post-link-icon" imageUrl="images/common/post.svg" />
+                    <ImageWrapper className="header__post-link-icon" imageUrl="/images/common/post.svg" />
                   </Link>
                 </div>
               </div>
               <div className={this.activeClassNameGenerator('header__link-row', ['/get'])}>
                 <div className="header__link-wrapper">
                   <Link className="header__get-link" activeClassName="get-link--active" to="/get">
-                    <ImageWrapper className="header__get-link-icon" imageUrl="images/common/get.svg" />
+                    <ImageWrapper className="header__get-link-icon" imageUrl="/images/common/get.svg" />
                   </Link>
                 </div>
               </div>
