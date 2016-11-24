@@ -1,5 +1,6 @@
 import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
+import { reducer as formReducer } from 'redux-form';
 import locationReducer from 'store/location';
 import { authReducer as auth } from 'store/auth/authReducers.js';
 import { profileReducer as profile } from 'store/profile/profileReducers.js';
@@ -18,6 +19,7 @@ export const rootReducer = (asyncReducers) => {
     app: combineReducers(reducerMap),
     routing: routerReducer,
     location: locationReducer,
+    form: formReducer,
     ...asyncReducers
   });
 };
