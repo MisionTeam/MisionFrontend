@@ -90,6 +90,7 @@ export default {
   /********************************
   ****  Profile Page  ****
   *******************************/
+  "profile.basicInfoForm.formTitle": "FR Basic Information",
   "profile.basicInfoForm.firstName.label": "FR First Name",
   "profile.basicInfoForm.lastName.label": "FR Last Name",
   "profile.basicInfoForm.gender.label": "FR Gender",
@@ -98,5 +99,6 @@ export default {
   "profile.basicInfoForm.age.label": "FR Age",
   "profile.basicInfoForm.email.label": "FR Email",
   "profile.basicInfoForm.phone.label": "FR Phone",
-  "profile.basicInfoForm.hasCae.label": "FR Has Car"
+  "profile.basicInfoForm.hasCar.label": "FR Has Car",
+  "profile.basicInfoForm.submitButton.label": "FR Submit"
 };

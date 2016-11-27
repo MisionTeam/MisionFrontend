@@ -18,7 +18,7 @@ const Button = (props) => {
     className,
     onClick,
     color = 'blue',
-    type = 'button',
+    type = props.type || 'button',
     display = 'inline',
     theme = 'solid',
     isValid = true,

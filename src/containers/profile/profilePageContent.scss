@@ -6,4 +6,17 @@
     flex-direction: column;
     margin-left: 50px;
   }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+
+    .form-group-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      color: $blue-background;
+      cursor: pointer;
+    }
+  }
 }

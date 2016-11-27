@@ -5,6 +5,7 @@ import { FormattedMessage } from 'react-intl';
 import {connect} from 'react-redux';
 
 import InputGroup from 'components/input/inputGroup.jsx';
+import Button from 'components/shared/button.jsx';
 
 const connectState = (state) => ({
   // initialValues: state.app.profile.member.toJS()
@@ -119,7 +120,11 @@ class BasicInfoForm extends React.Component {
           </div>
         </div>
 
-        <button type="submit">Submit</button>
+        <div className="basic-info-form__button-wrapper">
+          <Button className="basic-info-form__submit-button" color="blue" theme="transparent" type="submit">
+            <FormattedMessage id="profile.basicInfoForm.submitButton.label" />
+          </Button>
+        </div>
       </form>
     );
   }
