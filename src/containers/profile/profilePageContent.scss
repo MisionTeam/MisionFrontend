@@ -1,0 +1,9 @@
+.profile-content {
+  flex-basis: 80%;
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+  }
+}

@@ -1,0 +1,9 @@
+.radio-group {
+  &__field {
+    display: flex;
+  }
+
+  &__input-error {
+    color: $red;
+  }
+}

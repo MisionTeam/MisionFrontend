@@ -9,7 +9,7 @@ import validatorIsEmail from 'validator/lib/isEmail';
  */
 const validation = {
   exists(value) {
-    return (value && typeof value === 'string' && value.trim().length !== 0 ? null : 'common.requiredFieldError');
+    return (value && typeof value === 'string' && value.trim().length !== 0 ? null : 'form.error.requiredFieldError');
   },
 
   number(value) {

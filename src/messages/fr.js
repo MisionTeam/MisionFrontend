@@ -73,5 +73,30 @@ export default {
   "homepage.weAre.imageSubLabel_1": "FR sub 1",
   "homepage.weAre.imageSubLabel_2": "FR sub 2",
   "homepage.weAre.imageSubLabel_3": "FR sub 3",
-  "homepage.footer.contactButton": "FR Contact Us"
+  "homepage.footer.contactButton": "FR Contact Us",
+
+  /********************************
+  ****  Side NavBar   ****
+  *******************************/
+  "sideNavBar.linkLabel.dashboard": "FR Dashboard",
+  "sideNavBar.linkLabel.myList": "FR My List",
+  "sideNavBar.linkLabel.notifications": "FR Notifications",
+
+  /********************************
+  ****  Form Messages ****
+  *******************************/
+  "form.error.requiredFieldError": "FR Please enter the required information",
+
+  /********************************
+  ****  Profile Page  ****
+  *******************************/
+  "profile.basicInfoForm.firstName.label": "FR First Name",
+  "profile.basicInfoForm.lastName.label": "FR Last Name",
+  "profile.basicInfoForm.gender.label": "FR Gender",
+  "profile.basicInfoForm.gender.options.male": "FR Male",
+  "profile.basicInfoForm.gender.options.female": "FR Female",
+  "profile.basicInfoForm.age.label": "FR Age",
+  "profile.basicInfoForm.email.label": "FR Email",
+  "profile.basicInfoForm.phone.label": "FR Phone",
+  "profile.basicInfoForm.hasCae.label": "FR Has Car"
 };

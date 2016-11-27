@@ -41,6 +41,8 @@
 @import '~components/home/footer/homepageFooter.scss';
 @import '~components/home/homepageBlockHeader.scss';
 @import '~components/sideNavBar/sideNavBar.scss';
+@import '~components/input/inputText.scss';
+@import '~components/input/InputRadio.scss';
 
 // =====================
 // Containers
@@ -50,6 +52,7 @@
 @import '~containers/errorPage/errorPage.scss';
 @import '~containers/header/headerContainer.scss';
 @import '~containers/login/loginContainer.scss';
+@import '~containers/profile/profilePageContent.scss';
 
 // =====================
 // Common Components -- need fix styles
@@ -58,3 +61,9 @@
 @import '~components/shared/imageWrapper.scss';
 @import '~components/shared/generalLabel.scss';
 @import '~components/shared/generalSubLabel.scss';
+
+// =====================
+// Forms
+// =====================
+
+@import '~forms/profile/basicInfoForm.scss';

@@ -7,7 +7,6 @@ class ProfileContainer extends React.Component {
   render() {
     return (
       <div className="profile">
-        This is your profile page
         <div className="profile container">
           <SideNavBar />
           <ProfilePageContent />

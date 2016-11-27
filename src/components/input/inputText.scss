@@ -1,0 +1,10 @@
+.text-group {
+  &__field {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__input-error {
+    color: $red;
+  }
+}

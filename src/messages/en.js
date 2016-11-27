@@ -76,9 +76,27 @@ export default {
   "homepage.footer.contactButton": "Contact Us",
 
   /********************************
-  ****  Common   ****
+  ****  Side NavBar   ****
   *******************************/
   "sideNavBar.linkLabel.dashboard": "Dashboard",
   "sideNavBar.linkLabel.myList": "My List",
   "sideNavBar.linkLabel.notifications": "Notifications",
+
+  /********************************
+  ****  Form Messages ****
+  *******************************/
+  "form.error.requiredFieldError": "Please enter the required information",
+
+  /********************************
+  ****  Profile Page  ****
+  *******************************/
+  "profile.basicInfoForm.firstName.label": "First Name",
+  "profile.basicInfoForm.lastName.label": "Last Name",
+  "profile.basicInfoForm.gender.label": "Gender",
+  "profile.basicInfoForm.gender.options.male": "Male",
+  "profile.basicInfoForm.gender.options.female": "Female",
+  "profile.basicInfoForm.age.label": "Age",
+  "profile.basicInfoForm.email.label": "Email",
+  "profile.basicInfoForm.phone.label": "Phone",
+  "profile.basicInfoForm.hasCae.label": "Has Car"
 };
