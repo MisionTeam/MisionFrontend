@@ -59,7 +59,7 @@ class ProfilePageContent extends React.Component {
             <FormGroupHeader expandForm={this.expandForm} formName="basicInfoForm" />
             {
               isExpanded.basicInfoForm ?
-                <BasicInfoForm parentSubmit={this.updateProfile} initialValues={basicInforFormInitialValues} /> :
+                <BasicInfoForm parentSubmit={this.updateProfile} discardForm={this.discardForm} initialValues={basicInforFormInitialValues} /> :
                 null
             }
           </div>

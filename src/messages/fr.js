@@ -100,5 +100,6 @@ export default {
   "profile.basicInfoForm.email.label": "FR Email",
   "profile.basicInfoForm.phone.label": "FR Phone",
   "profile.basicInfoForm.hasCar.label": "FR Has Car",
-  "profile.basicInfoForm.submitButton.label": "FR Submit"
+  "profile.basicInfoForm.submitButton.label": "FR Submit",
+  "profile.basicInfoForm.cancelButton.label": "FR Discard"
 };

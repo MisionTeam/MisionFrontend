@@ -45,7 +45,10 @@ class BasicInfoForm extends React.Component {
   static propTypes = {
     handleSubmit: React.PropTypes.func.isRequired,
     parentSubmit: React.PropTypes.func.isRequired,
-    initialValues: React.PropTypes.object.isRequired
+    reset: React.PropTypes.func.isRequired,
+    initialValues: React.PropTypes.object.isRequired,
+    submitting: React.PropTypes.bool,
+    pristine: React.PropTypes.bool
   }
 
   componentWillReceiveProps() {
@@ -53,7 +56,7 @@ class BasicInfoForm extends React.Component {
   }
 
   render() {
-    const { handleSubmit, parentSubmit } = this.props;
+    const { handleSubmit, parentSubmit, reset, submitting, pristine } = this.props;
     return (
       <form className="basic-info-form" onSubmit={handleSubmit(parentSubmit)}>
 
@@ -121,8 +124,11 @@ class BasicInfoForm extends React.Component {
         </div>
 
         <div className="basic-info-form__button-wrapper">
-          <Button className="basic-info-form__submit-button" color="blue" theme="transparent" type="submit">
+          <Button className="basic-info-form__submit-button" color="blue" theme="solid" type="submit" disabled={pristine || submitting}>
             <FormattedMessage id="profile.basicInfoForm.submitButton.label" />
+          </Button>
+          <Button className="basic-info-form__cancel-button" color="blue" theme="transparent" type="button" onClick={reset} disabled={pristine || submitting}>
+            <FormattedMessage id="profile.basicInfoForm.cancelButton.label" />
           </Button>
         </div>
       </form>

@@ -22,7 +22,7 @@ const Button = (props) => {
     display = 'inline',
     theme = 'solid',
     isValid = true,
-    disabled = false
+    disabled = props.disabled || false
   } = props;
 
   const classes = classNames(
