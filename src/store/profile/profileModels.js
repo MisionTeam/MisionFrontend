@@ -1,15 +1,31 @@
 import Immutable from 'immutable';
 
-const Member = Immutable.Record({
-  firstName: null,
-  lastName: null
+const Address = Immutable.Record({
+  lat: null,
+  lng: null,
+  country: null,
+  state: null,
+  city: null,
+  street: null,
+  postcode: null
 });
 
 const Profile = Immutable.Record({
-  member: new Member()
+  id: null,
+  firstName: null,
+  lastName: null,
+  gender: null,
+  age: null,
+  email: null,
+  phone: null,
+  avatar: null,
+  job: null,
+  hasCar: null,
+  address: new Address(),
+  labels: []
 });
 
 export {
-  Member,
+  Address,
   Profile as InitialState
 };

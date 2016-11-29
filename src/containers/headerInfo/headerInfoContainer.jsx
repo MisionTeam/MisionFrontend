@@ -31,10 +31,10 @@ class HeaderInfoContainer extends React.Component {
   }
 
   render() {
-    const member = this.props.profile.member.toJS();
+    const profile = this.props.profile.toJS();
     return (
       <div className="header-info">
-        {member.firstName} {member.lastName}
+        {profile.firstName} {profile.lastName}
       </div>
     );
   }
