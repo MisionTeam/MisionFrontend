@@ -1,9 +1,8 @@
 import React from 'react';
-import { reduxForm, Field, SubmissionError } from 'redux-form';
+import { reduxForm, Field } from 'redux-form';
 import validation from 'utils/validation.js';
 import { FormattedMessage } from 'react-intl';
 import {connect} from 'react-redux';
-import autobind from 'autobind-decorator';
 
 import InputGroup from 'components/input/inputGroup.jsx';
 import Button from 'components/shared/button.jsx';
@@ -59,7 +58,6 @@ class AddressForm extends React.Component {
 
   render() {
     const { error, handleSubmit, parentSubmit, reset, submitting, pristine } = this.props;
-    console.log(error);
     return (
       <form className="address-form" onSubmit={handleSubmit(parentSubmit)}>
 

@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
 
@@ -36,7 +36,6 @@ const InputRadio = ({ classname, input, meta, optionsLabel }) => {
 InputRadio.propTypes = validPropTypes;
 
 const DropdownSelect = ({ classname, input, meta, options }) => {
-  console.log(options);
   return (
     <div className="dropdown-group__field">
       <select className="dropdown-group__select-box" {...input}>
