@@ -7,6 +7,7 @@ const validPropTypes = {
   input: React.PropTypes.object,
   classname: React.PropTypes.string,
   optionsLabel: React.PropTypes.string,
+  options: React.PropTypes.array,
   checked: React.PropTypes.bool
 };
 
@@ -34,13 +35,35 @@ const InputRadio = ({ classname, input, meta, optionsLabel }) => {
 };
 InputRadio.propTypes = validPropTypes;
 
+const DropdownSelect = ({ classname, input, meta, options }) => {
+  console.log(options);
+  return (
+    <div className="dropdown-group__field">
+      <select className="dropdown-group__select-box" {...input}>
+        <option value="">Select a state...</option>
+        {
+          options.map((option, i) => (
+            <option value={option.value} key={i}>{option.name}</option>
+          ))
+        }
+      </select>
+      {meta.error &&
+        <span className="text-group__input-error">
+          <FormattedMessage id={meta.error} />
+        </span>}
+    </div>
+  );
+};
+DropdownSelect.propTypes = validPropTypes;
+
 class InputGroup extends React.Component {
   static propTypes = {
     type: React.PropTypes.string.isRequired,
     meta: React.PropTypes.object,
     input: React.PropTypes.object,
     classname: React.PropTypes.string,
-    optionsLabel: React.PropTypes.string
+    optionsLabel: React.PropTypes.string,
+    options: React.PropTypes.array
   }
 
   render() {
@@ -49,7 +72,8 @@ class InputGroup extends React.Component {
       meta,
       input,
       classname,
-      optionsLabel
+      optionsLabel,
+      options
     } = this.props;
 
     switch (type) {
@@ -58,6 +82,9 @@ class InputGroup extends React.Component {
       }
       case 'radio': {
         return <InputRadio input={input} meta={meta} classname={classname} optionsLabel={optionsLabel} />;
+      }
+      case 'dropdown': {
+        return <DropdownSelect input={input} meta={meta} classname={classname} options={options} />;
       }
       default: {
         return <InputText input={input} meta={meta} classname={classname} />;

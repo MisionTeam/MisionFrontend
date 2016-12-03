@@ -1,4 +1,4 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
 import { reduxForm, Field } from 'redux-form';
 import validation from 'utils/validation.js';
 import { FormattedMessage } from 'react-intl';

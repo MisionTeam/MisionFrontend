@@ -101,5 +101,10 @@ export default {
   "profile.basicInfoForm.phone.label": "FR Phone",
   "profile.basicInfoForm.hasCar.label": "FR Has Car",
   "profile.basicInfoForm.submitButton.label": "FR Submit",
-  "profile.basicInfoForm.cancelButton.label": "FR Discard"
+  "profile.basicInfoForm.cancelButton.label": "FR Discard",
+  "profile.addressForm.formTitle": "FR Address",
+  "profile.addressForm.street.label": "FR Address Line 1",
+  "profile.addressForm.city.label": "FR City",
+  "profile.addressForm.state.label": "FR State",
+  "profile.addressForm.postalCode.label": "FR Postal Code"
 };

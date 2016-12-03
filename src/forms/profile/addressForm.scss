@@ -1,0 +1,51 @@
+.address-form {
+  display: flex;
+  flex-direction: column;
+
+  &__field-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 20px;
+    width: 70%;
+
+    &--center {
+      justify-content: center;
+    }
+  }
+
+  &__label {
+    flex-basis: 30%;
+    margin-right: 20px;
+    color: $gray;
+  }
+
+  &__form-field {
+    flex-basis: 70%;
+
+    select {
+      width: 100%;
+    }
+  }
+
+  &__button-wrapper {
+    display: flex;
+    justify-content: center;
+    width: 70%;
+
+    .button {
+      flex-basis: 20%;
+      margin-right: 20px;
+    }
+  }
+
+  &__submit-button {
+    flex-basis: 30%;
+  }
+
+  &__form-error {
+    width: 70%;
+    margin-bottom: 20px;
+    color: $red;
+    font-weight: bold;
+  }
+}
