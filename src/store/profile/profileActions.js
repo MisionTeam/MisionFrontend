@@ -10,8 +10,8 @@ export const getUserProfileFailed = createAction('GET_USER_PROFILE_FAILED');
 export const patchUserProfile = createAction('PATCH_USER_PROFILE');
 export const patchUserProfileFailed = createAction('PATCH_USER_PROFILE_FAILED');
 
-export const processGetUserProfile = (dispatch) => {
-  return profileService.getProfile()
+export const processGetUserFullProfile = (dispatch) => {
+  return profileService.getFullProfile()
     .withPathComponents({ token: authStorage.get() })
     .addCallback(response => dispatch(getUserProfile(response)))
     .withErrorCallback(error => dispatch(getUserProfileFailed(error)))

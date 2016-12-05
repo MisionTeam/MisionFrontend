@@ -2,7 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
 
-import { processGetUserProfile } from 'store/profile/profileActions.js';
+import { processGetUserFullProfile } from 'store/profile/profileActions.js';
 
 const connectState = (state) => ({
   profile: state.app.profile,
@@ -10,7 +10,7 @@ const connectState = (state) => ({
 });
 
 const dispatchConnect = (dispatch) => ({
-  getUserProfile: () => processGetUserProfile(dispatch)
+  getUserFullProfile: () => processGetUserFullProfile(dispatch)
 });
 
 @connect(connectState, dispatchConnect)
@@ -18,7 +18,7 @@ class HeaderInfoContainer extends React.Component {
   static propTypes = {
     auth: React.PropTypes.object.isRequired,
     profile: React.PropTypes.object.isRequired,
-    getUserProfile: React.PropTypes.func.isRequired
+    getUserFullProfile: React.PropTypes.func.isRequired
   };
 
   componentDidMount() {
@@ -27,7 +27,7 @@ class HeaderInfoContainer extends React.Component {
 
   @autobind
   handleGetUserProfile() {
-    this.props.getUserProfile();
+    this.props.getUserFullProfile();
   }
 
   render() {

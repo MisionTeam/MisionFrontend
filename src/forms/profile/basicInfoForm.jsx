@@ -46,7 +46,7 @@ class BasicInfoForm extends React.Component {
     handleSubmit: React.PropTypes.func.isRequired,
     parentSubmit: React.PropTypes.func.isRequired,
     reset: React.PropTypes.func.isRequired,
-    initialValues: React.PropTypes.object.isRequired,
+    initialValues: React.PropTypes.object,
     submitting: React.PropTypes.bool,
     pristine: React.PropTypes.bool
   }

@@ -1,6 +1,6 @@
 import { createApiWrappers } from 'utils/apiUtils.js';
 
 export default createApiWrappers({
-  getProfile: ['GET', '/auth/profile?token=:token'],
-  patchProfile: ['PATCH', '/auth/profile?token=:token']
+  getFullProfile: ['GET', '/profile/full?token=:token'],
+  patchProfile: ['PATCH', '/profile?token=:token']
 });

@@ -1,5 +1,5 @@
 import { createApiWrappers } from 'utils/apiUtils.js';
 
 export default createApiWrappers({
-	login: ['POST', '/auth/login'],
+  login: ['POST', '/auth/login/facebook']
 });

@@ -6,7 +6,7 @@ import * as authActions from 'store/auth/authActions.js';
 
 export const profileReducer = handleActions({
   [profileActions.getUserProfile().type]: (state, action) => {
-    return state.mergeDeep(action.payload.data);
+    return state.mergeDeep(action.payload.data.user);
   },
 
   [authActions.userLogout().type]: (state) => new ProfileModels.InitialState()

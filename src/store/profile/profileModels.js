@@ -7,7 +7,7 @@ const Address = Immutable.Record({
   state: null,
   city: null,
   street: null,
-  postcode: null
+  postalCode: null
 });
 
 const Profile = Immutable.Record({

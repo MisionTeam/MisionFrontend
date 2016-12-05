@@ -1,4 +1,5 @@
 import React from 'react';
+import { connect } from 'react-redux';
 import { FormattedMessage } from 'react-intl';
 import autobind from 'autobind-decorator';
 import { SubmissionError } from 'redux-form';
@@ -7,22 +8,24 @@ import BasicInfoForm from 'forms/profile/basicInfoForm.jsx';
 import AddressForm from 'forms/profile/addressForm.jsx';
 import Pointer from 'layouts/pointer/pointer.jsx';
 
-const basicInforFormInitialValues = {
-  firstName: 'Kobe',
-  lastName: 'Bryant',
-  gender: 'male',
-  age: '37',
-  email: 'kobe@kobe.com',
-  phone: '11111111111'
-};
+import { processGetUserFullProfile } from 'store/profile/profileActions.js';
 
-const addressFormInitialValues = {
-  street: '1 Yonge Street',
-  city: 'Toronto',
-  state: 'ON',
-  country: 'Canada',
-  postalCode: 'M1P4Z4'
-};
+// const basicInforFormInitialValues = {
+//   firstName: 'Kobe',
+//   lastName: 'Bryant',
+//   gender: 'male',
+//   age: '37',
+//   email: 'kobe@kobe.com',
+//   phone: '11111111111'
+// };
+//
+// const addressFormInitialValues = {
+//   street: '1 Yonge Street',
+//   city: 'Toronto',
+//   state: 'ON',
+//   country: 'Canada',
+//   postalCode: 'M1P4Z4'
+// };
 
 const validPropTypes = {
   expandForm: React.PropTypes.func.isRequired,
@@ -41,11 +44,60 @@ const FormGroupHeader = ({ expandForm, formName }) => {
 };
 FormGroupHeader.propTypes = validPropTypes;
 
+const connectState = (state) => ({
+  profile: state.app.profile,
+  auth: state.app.auth
+});
+
+const dispatchConnect = (dispatch) => ({
+  getUserFullProfile: () => processGetUserFullProfile(dispatch)
+});
+
+@connect(connectState, dispatchConnect)
 class ProfilePageContent extends React.Component {
+  static propTypes = {
+    auth: React.PropTypes.object.isRequired,
+    profile: React.PropTypes.object.isRequired
+  };
+
   state = {
     isExpanded: {
       basicInfoForm: true,
       addressForm: true
+    },
+    basicInforFormInitialValues: null,
+    addressFormInitialValues: null
+  }
+
+  componentWillMount() {
+    this.componentWillReceiveProps(this.props);
+  }
+
+  componentWillReceiveProps(props) {
+    if (!props.profile.firstName) {
+      props.getUserFullProfile();
+    } else {
+      const newBasicInfoInitialValues = {
+        firstName: props.profile.firstName,
+        lastName: props.profile.lastName,
+        gender: props.profile.gender,
+        age: props.profile.age,
+        email: props.profile.email,
+        phone: props.profile.phone
+      };
+      this.setState({
+        basicInforFormInitialValues: newBasicInfoInitialValues
+      });
+      const newAddressInitialValues = {
+        street: props.profile.address.street,
+        city: props.profile.address.city,
+        state: props.profile.address.state,
+        country: props.profile.address.country,
+        postalCode: props.profile.address.postalCode
+      };
+      this.setState({
+        addressFormInitialValues: newAddressInitialValues
+      });
     }
   }
 
@@ -96,7 +148,8 @@ class ProfilePageContent extends React.Component {
     });
   }
   render() {
-    const { isExpanded } = this.state;
+    const { isExpanded, basicInforFormInitialValues, addressFormInitialValues } = this.state;
+
     return (
       <div className="profile-content">
         <div className="profile-content__container">
