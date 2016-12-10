@@ -6,6 +6,7 @@ import { SubmissionError } from 'redux-form';
 
 import BasicInfoForm from 'forms/profile/basicInfoForm.jsx';
 import AddressForm from 'forms/profile/addressForm.jsx';
+import PersonalTagForm from 'forms/profile/personalTagForm.jsx';
 import Pointer from 'layouts/pointer/pointer.jsx';
 
 import { processGetUserFullProfile } from 'store/profile/profileActions.js';
@@ -63,10 +64,12 @@ class ProfilePageContent extends React.Component {
   state = {
     isExpanded: {
       basicInfoForm: true,
-      addressForm: true
+      addressForm: true,
+      personalTagForm: true
     },
     basicInforFormInitialValues: null,
-    addressFormInitialValues: null
+    addressFormInitialValues: null,
+    personalTagFormInitialValues: null
   }
 
   componentWillMount() {
@@ -97,6 +100,12 @@ class ProfilePageContent extends React.Component {
       };
       this.setState({
         addressFormInitialValues: newAddressInitialValues
+      });
+      const newPersonalTagInitialValues = {
+        tags: ['tag1', 'tag2']
+      };
+      this.setState({
+        personalTagFormInitialValues: newPersonalTagInitialValues
       });
     }
   }
@@ -148,7 +157,7 @@ class ProfilePageContent extends React.Component {
     });
   }
   render() {
-    const { isExpanded, basicInforFormInitialValues, addressFormInitialValues } = this.state;
+    const { isExpanded, basicInforFormInitialValues, addressFormInitialValues, personalTagFormInitialValues } = this.state;
 
     return (
       <div className="profile-content">
@@ -166,6 +175,14 @@ class ProfilePageContent extends React.Component {
             {
               isExpanded.addressForm ?
                 <AddressForm parentSubmit={this.updateAddress} discardForm={this.discardForm} initialValues={addressFormInitialValues} /> :
+                null
+            }
+          </div>
+          <div className="profile-content__form-group">
+            <FormGroupHeader expandForm={this.expandForm} formName="personalTagForm" />
+            {
+              isExpanded.personalTagForm ?
+                <PersonalTagForm parentSubmit={this.updateAddress} discardForm={this.discardForm} initialValues={personalTagFormInitialValues} /> :
                 null
             }
           </div>

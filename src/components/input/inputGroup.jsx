@@ -55,6 +55,18 @@ const DropdownSelect = ({ classname, input, meta, options }) => {
 };
 DropdownSelect.propTypes = validPropTypes;
 
+const TagsCheckBox = ({ input, meta }) => {
+  console.log(input);
+  const classname = `tags-check-box ${input.value ? 'checked' : 'unchecked'}`;
+  return (
+    <div className={classname}>
+      <input className="tags-check-box__input-box" id={input.name} type="checkbox" {...input} />
+      <label htmlFor={input.name}>test</label>
+    </div>
+  );
+};
+TagsCheckBox.propTypes = validPropTypes;
+
 class InputGroup extends React.Component {
   static propTypes = {
     type: React.PropTypes.string.isRequired,
@@ -84,6 +96,9 @@ class InputGroup extends React.Component {
       }
       case 'dropdown': {
         return <DropdownSelect input={input} meta={meta} classname={classname} options={options} />;
+      }
+      case 'tagsCheckBox': {
+        return <TagsCheckBox input={input} meta={meta} classname={classname} />;
       }
       default: {
         return <InputText input={input} meta={meta} classname={classname} />;

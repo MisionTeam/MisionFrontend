@@ -1,0 +1,14 @@
+.personal-tag-form {
+  &__form-field {
+    display: flex;
+  }
+
+  .tags-check-box {
+    margin-right: 5px;
+
+    &__input-box {
+      display: none;
+      cursor: pointer;
+    }
+  }
+}
