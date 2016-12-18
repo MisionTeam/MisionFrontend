@@ -6,27 +6,17 @@ import { FormattedMessage } from 'react-intl';
 import InputGroup from 'components/input/inputGroup.jsx';
 import Button from 'components/shared/button.jsx';
 
-const tags = [
-  {
-    name: 'Tag1',
-    value: true
-  },
-  {
-    name: 'Tag2',
-    value: false
-  }
-];
-
 const validPropTypes = {
   input: React.PropTypes.object.isRequired,
   type: React.PropTypes.string.isRequired,
   meta: React.PropTypes.object.isRequired,
   checked: React.PropTypes.bool,
-  fields: React.PropTypes.array
+  fields: React.PropTypes.array,
+  classname: React.PropTypes.string
 };
 
-const TagsCheckBox = ({input, type, meta}) => (
-  <InputGroup type={type} meta={meta} input={input} classname="personal-tag-form" />
+const TagsCheckBox = ({input, type, meta, classname}) => (
+  <InputGroup type={type} meta={meta} input={input} classname={classname} />
 );
 TagsCheckBox.propTypes = validPropTypes;
 
@@ -47,26 +37,45 @@ class PersonalTagForm extends React.Component {
     error: React.PropTypes.string
   }
 
-  componentWillReceiveProps() {
+  componentWillMount() {
     console.log(this.props.initialValues);
   }
 
+  renderTagFields(initialValues, isMyTag) {
+    const tagNames = Object.keys(initialValues);
+    return (
+      tagNames.map((tag, index) => {
+        return (
+          <Field
+            name={tag}
+            component={TagsCheckBox}
+            type="tagsCheckBox"
+            key={index}
+            classname={`${isMyTag ? 'my-tags' : 'all-tags'}`}
+          />
+        );
+      })
+    );
+  }
   render() {
-    const { error, handleSubmit, parentSubmit, reset, submitting, pristine } = this.props;
+    const { handleSubmit, parentSubmit, reset, submitting, pristine, initialValues } = this.props;
     return (
       <form className="personal-tag-form" onSubmit={handleSubmit(parentSubmit)}>
 
         <div className="personal-tag-form__field-wrapper">
-          <div className="personal-tag-form__form-field">
+          <label className="personal-tag-form__label"><FormattedMessage id="profile.personalTagForm.myTags.label" /></label>
+          <div className="personal-tag-form__form-field my-tags">
             {
-              tags.map((tag, index) => (
-                <Field
-                  name={tag.name}
-                  component={TagsCheckBox}
-                  type="tagsCheckBox"
-                  key={index}
-                />
-              ))
+              this.renderTagFields(initialValues, true)
+            }
+          </div>
+        </div>
+
+        <div className="personal-tag-form__field-wrapper">
+          <label className="personal-tag-form__label"><FormattedMessage id="profile.personalTagForm.allTags.label" /></label>
+          <div className="personal-tag-form__form-field all-tags">
+            {
+              this.renderTagFields(initialValues, false)
             }
           </div>
         </div>

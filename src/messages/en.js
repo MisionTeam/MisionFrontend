@@ -107,5 +107,7 @@ export default {
   "profile.addressForm.city.label": "City",
   "profile.addressForm.state.label": "State",
   "profile.addressForm.postalCode.label": "Postal Code",
-  "profile.personalTagForm.formTitle": "Personal Tags"
+  "profile.personalTagForm.formTitle": "Personal Tags",
+  "profile.personalTagForm.myTags.label": "My Tags",
+  "profile.personalTagForm.allTags.label": "All Tags"
 };

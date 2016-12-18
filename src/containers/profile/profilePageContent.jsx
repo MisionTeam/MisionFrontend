@@ -77,6 +77,19 @@ class ProfilePageContent extends React.Component {
   }
 
   componentWillReceiveProps(props) {
+    const newPersonalTagInitialValues = {
+      tag1: true,
+      tag2: false,
+      tag3: false,
+      tag4: true,
+      tag5: false,
+      tag6: false,
+      tag7: true,
+      tag8: false
+    };
+    this.setState({
+      personalTagFormInitialValues: newPersonalTagInitialValues
+    });
     if (!props.profile.firstName) {
       props.getUserFullProfile();
     } else {
@@ -100,12 +113,6 @@ class ProfilePageContent extends React.Component {
       };
       this.setState({
         addressFormInitialValues: newAddressInitialValues
-      });
-      const newPersonalTagInitialValues = {
-        tags: ['tag1', 'tag2']
-      };
-      this.setState({
-        personalTagFormInitialValues: newPersonalTagInitialValues
       });
     }
   }
@@ -182,7 +189,7 @@ class ProfilePageContent extends React.Component {
             <FormGroupHeader expandForm={this.expandForm} formName="personalTagForm" />
             {
               isExpanded.personalTagForm ?
-                <PersonalTagForm parentSubmit={this.updateAddress} discardForm={this.discardForm} initialValues={personalTagFormInitialValues} /> :
+                <PersonalTagForm parentSubmit={this.updateProfile} discardForm={this.discardForm} initialValues={personalTagFormInitialValues} /> :
                 null
             }
           </div>
