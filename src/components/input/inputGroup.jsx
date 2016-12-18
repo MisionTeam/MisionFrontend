@@ -56,7 +56,6 @@ const DropdownSelect = ({ classname, input, meta, options }) => {
 DropdownSelect.propTypes = validPropTypes;
 
 const TagsCheckBox = ({ input, meta, classname }) => {
-  console.log(input);
   const className = `tags-check-box ${classname} ${input.value ? 'checked' : 'unchecked'}`;
   return (
     <div className={className}>

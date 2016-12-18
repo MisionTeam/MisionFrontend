@@ -11,23 +11,6 @@ import Pointer from 'layouts/pointer/pointer.jsx';
 
 import { processGetUserFullProfile } from 'store/profile/profileActions.js';
 
-// const basicInforFormInitialValues = {
-//   firstName: 'Kobe',
-//   lastName: 'Bryant',
-//   gender: 'male',
-//   age: '37',
-//   email: 'kobe@kobe.com',
-//   phone: '11111111111'
-// };
-//
-// const addressFormInitialValues = {
-//   street: '1 Yonge Street',
-//   city: 'Toronto',
-//   state: 'ON',
-//   country: 'Canada',
-//   postalCode: 'M1P4Z4'
-// };
-
 const validPropTypes = {
   expandForm: React.PropTypes.func.isRequired,
   formName: React.PropTypes.string.isRequired
