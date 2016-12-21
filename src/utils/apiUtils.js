@@ -5,7 +5,7 @@ import { storageManager, STORAGE_TYPES } from 'utils/storageUtils.js';
 // Add any config setup for axios.
 // const authStorage = storageManager.createOrFetchStorage('auth', STORAGE_TYPES.local);
 export const api = axios.create({
-  baseURL: 'http://192.168.2.10:8181'
+  baseURL: 'http://52.23.239.121:8181/'
 });
 
 api.interceptors.request.use(
