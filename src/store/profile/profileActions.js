@@ -7,8 +7,8 @@ const authStorage = storageManager.createOrFetchStorage('auth', STORAGE_TYPES.lo
 
 export const getUserProfile = createAction('GET_USER_PROFILE');
 export const getUserProfileFailed = createAction('GET_USER_PROFILE_FAILED');
-export const patchUserProfile = createAction('PATCH_USER_PROFILE');
-export const patchUserProfileFailed = createAction('PATCH_USER_PROFILE_FAILED');
+export const postUserProfile = createAction('POST_USER_PROFILE');
+export const postUserProfileFailed = createAction('POST_USER_PROFILE_FAILED');
 
 export const processGetUserFullProfile = (dispatch) => {
   return profileService.getFullProfile()
@@ -18,11 +18,11 @@ export const processGetUserFullProfile = (dispatch) => {
     .exec();
 };
 
-export const processPatchUserProfile = (dispatch, data) => {
-  return profileService.patchProfile()
+export const processPostUserProfile = (dispatch, data) => {
+  return profileService.postProfile()
     .withData(data)
     .withPathComponents({ token: authStorage.get() })
-    .addCallback(response => dispatch(patchUserProfile(response)))
-    .withErrorCallback(error => dispatch(patchUserProfileFailed(error)))
+    .addCallback(response => dispatch(postUserProfile(response)))
+    .withErrorCallback(error => dispatch(postUserProfileFailed(error)))
     .exec();
 };

@@ -35,7 +35,7 @@ InlineRadioButton.propTypes = validPropTypes;
     firstName: validation.exists(values.firstName),
     lastName: validation.exists(values.lastName),
     gender: validation.exists(values.gender),
-    age: validation.exists(values.age),
+    age: validation.number(values.age),
     email: validation.exists(values.email)
   })
 })

@@ -9,7 +9,7 @@ import AddressForm from 'forms/profile/addressForm.jsx';
 import PersonalTagForm from 'forms/profile/personalTagForm.jsx';
 import Pointer from 'layouts/pointer/pointer.jsx';
 
-import { processGetUserFullProfile } from 'store/profile/profileActions.js';
+import { processPostUserProfile, processGetUserFullProfile } from 'store/profile/profileActions.js';
 
 const validPropTypes = {
   expandForm: React.PropTypes.func.isRequired,
@@ -34,7 +34,8 @@ const connectState = (state) => ({
 });
 
 const dispatchConnect = (dispatch) => ({
-  getUserFullProfile: () => processGetUserFullProfile(dispatch)
+  getUserFullProfile: () => processGetUserFullProfile(dispatch),
+  postUserProfile: (data) => processPostUserProfile(dispatch, data)
 });
 
 @connect(connectState, dispatchConnect)
@@ -80,7 +81,7 @@ class ProfilePageContent extends React.Component {
         firstName: props.profile.firstName,
         lastName: props.profile.lastName,
         gender: props.profile.gender,
-        age: props.profile.age,
+        age: String(props.profile.age),
         email: props.profile.email,
         phone: props.profile.phone
       };
