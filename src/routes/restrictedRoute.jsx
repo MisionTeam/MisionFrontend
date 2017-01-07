@@ -11,6 +11,7 @@ const connectDispatch = (dispatch) => ({
 });
 
 const unrestrcitedPathNames = [
+  '/profile/info',
   '/home',
   '/error'
 ];

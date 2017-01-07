@@ -4,12 +4,17 @@ import { FormattedMessage } from 'react-intl';
 import autobind from 'autobind-decorator';
 import { SubmissionError } from 'redux-form';
 
+import AvatarForm from 'forms/profile/avatarForm.jsx';
 import BasicInfoForm from 'forms/profile/basicInfoForm.jsx';
 import AddressForm from 'forms/profile/addressForm.jsx';
 import PersonalTagForm from 'forms/profile/personalTagForm.jsx';
 import Pointer from 'layouts/pointer/pointer.jsx';
 
 import { processGetUserFullProfile } from 'store/profile/profileActions.js';
+
+const avatarFormInitialValues = {
+
+};
 
 const validPropTypes = {
   expandForm: React.PropTypes.func.isRequired,
@@ -46,13 +51,19 @@ class ProfilePageContent extends React.Component {
 
   state = {
     isExpanded: {
+      avatarForm: true,
       basicInfoForm: true,
       addressForm: true,
       personalTagForm: true
     },
     basicInforFormInitialValues: null,
     addressFormInitialValues: null,
-    personalTagFormInitialValues: null
+    personalTagFormInitialValues: null,
+    avatarInitialValue: {
+      cropperOpen: false,
+      img: "http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg",
+      croppedImage: "http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg"
+    }
   }
 
   componentWillMount() {
@@ -98,7 +109,7 @@ class ProfilePageContent extends React.Component {
         addressFormInitialValues: newAddressInitialValues
       });
     }
-  }
+  };
 
   @autobind
   updateAddress(formData) {
@@ -138,6 +149,10 @@ class ProfilePageContent extends React.Component {
     console.log(geoCode);
   }
 
+  updateAvatar() {
+    console.log('test');
+  }
+
   @autobind
   expandForm(form) {
     const newState = this.state.isExpanded;
@@ -152,6 +167,14 @@ class ProfilePageContent extends React.Component {
     return (
       <div className="profile-content">
         <div className="profile-content__container">
+          <div className="profile-content__form-group">
+            <FormGroupHeader expandForm={this.expandForm} formName="avatarForm" />
+            {
+              isExpanded.avatarForm ?
+                <AvatarForm parentSubmit={this.updateAvatar} discardForm={this.discardForm} initialValues={avatarFormInitialValues} /> :
+                null
+            }
+          </div>
           <div className="profile-content__form-group">
             <FormGroupHeader expandForm={this.expandForm} formName="basicInfoForm" />
             {
