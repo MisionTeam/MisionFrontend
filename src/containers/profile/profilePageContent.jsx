@@ -12,10 +12,6 @@ import Pointer from 'layouts/pointer/pointer.jsx';
 
 import { processGetUserFullProfile } from 'store/profile/profileActions.js';
 
-const avatarFormInitialValues = {
-
-};
-
 const validPropTypes = {
   expandForm: React.PropTypes.func.isRequired,
   formName: React.PropTypes.string.isRequired
@@ -59,10 +55,10 @@ class ProfilePageContent extends React.Component {
     basicInforFormInitialValues: null,
     addressFormInitialValues: null,
     personalTagFormInitialValues: null,
-    avatarInitialValue: {
+    avatarFormInitialValues: {
       cropperOpen: false,
-      img: "http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg",
-      croppedImage: "http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg"
+      img: 'http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg',
+      croppedImage: 'http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg'
     }
   }
 
@@ -171,7 +167,7 @@ class ProfilePageContent extends React.Component {
             <FormGroupHeader expandForm={this.expandForm} formName="avatarForm" />
             {
               isExpanded.avatarForm ?
-                <AvatarForm parentSubmit={this.updateAvatar} discardForm={this.discardForm} initialValues={avatarFormInitialValues} /> :
+                <AvatarForm parentSubmit={this.updateAvatar} initialValues={this.state.avatarFormInitialValues} /> :
                 null
             }
           </div>
