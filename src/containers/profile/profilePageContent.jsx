@@ -56,11 +56,12 @@ class ProfilePageContent extends React.Component {
     addressFormInitialValues: null,
     personalTagFormInitialValues: null,
     avatarFormInitialValues: {
+      last: null,
       cropperOpen: false,
-      img: 'http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg',
+      img: null,
       croppedImage: 'http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg'
     }
-  }
+  };
 
   componentWillMount() {
     this.componentWillReceiveProps(this.props);
@@ -145,8 +146,38 @@ class ProfilePageContent extends React.Component {
     console.log(geoCode);
   }
 
-  updateAvatar() {
-    console.log('test');
+  @autobind
+  avatarHandleFileChange(dataURI) {
+    const avatarConfig = this.state.avatarFormInitialValues;
+    avatarConfig.cropperOpen = true;
+    avatarConfig.img = dataURI;
+    if (avatarConfig.last) {
+      avatarConfig.croppedImage = avatarConfig.last;
+    }
+    this.setState({
+      avatarFormInitialValues: avatarConfig
+    });
+  }
+
+  @autobind
+  avatarHandleCrop(dataURI) {
+    this.setState({
+      avatarFormInitialValues: {
+        last: dataURI,
+        cropperOpen: false,
+        img: null,
+        croppedImage: dataURI
+      }
+    });
+  }
+
+  @autobind
+  avatarHandleRequestHide() {
+    const temp = this.state.avatarFormInitialValues;
+    temp.cropperOpen = false;
+    this.setState({
+      avatarFormInitialValues: temp
+    });
   }
 
   @autobind
@@ -167,7 +198,7 @@ class ProfilePageContent extends React.Component {
             <FormGroupHeader expandForm={this.expandForm} formName="avatarForm" />
             {
               isExpanded.avatarForm ?
-                <AvatarForm parentSubmit={this.updateAvatar} initialValues={this.state.avatarFormInitialValues} /> :
+                <AvatarForm handleFileChange={this.avatarHandleFileChange} handleCrop={this.avatarHandleCrop} handleRequestHide={this.avatarHandleRequestHide} initialValues={this.state.avatarFormInitialValues} /> :
                 null
             }
           </div>

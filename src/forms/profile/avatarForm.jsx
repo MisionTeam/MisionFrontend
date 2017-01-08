@@ -1,38 +1,30 @@
 import AvatarCropper from 'react-avatar-cropper';
 import React from 'react';
-import ReactDom from 'react-dom';
-import { FormattedMessage } from 'react-intl';
-import {connect} from 'react-redux';
-
-import Button from 'components/shared/button.jsx';
+import FileUpload from 'utils/avatarUpload.jsx';
+import autobind from 'autobind-decorator';
 
 class AvatarForm extends React.Component {
 
   static propTypes = {
-    parentSubmit: React.PropTypes.func.isRequired,
+    handleFileChange: React.PropTypes.func.isRequired,
+    handleCrop: React.PropTypes.func.isRequired,
+    handleRequestHide: React.PropTypes.func.isRequired,
     initialValues: React.PropTypes.object.isRequired
   };
 
+  @autobind
   handleFileChange(dataURI) {
-    this.setState({
-      img: dataURI,
-      croppedImg: this.state.croppedImg,
-      cropperOpen: true
-    });
+    this.props.handleFileChange(dataURI);
   }
 
+  @autobind
   handleCrop(dataURI) {
-    this.setState({
-      cropperOpen: false,
-      img: null,
-      croppedImg: dataURI
-    });
+    this.props.handleCrop(dataURI);
   }
 
+  @autobind
   handleRequestHide() {
-    this.setState({
-      cropperOpen: false
-    });
+    this.props.handleRequestHide();
   }
 
   render() {
@@ -40,6 +32,7 @@ class AvatarForm extends React.Component {
     return (
       <div>
         <div className="avatar-photo">
+          <FileUpload handleFileChange={this.handleFileChange} />
           <div className="avatar-edit">
             <span>Click to pick avatar</span>
           </div>
@@ -59,29 +52,5 @@ class AvatarForm extends React.Component {
     );
   }
 };
-
-// var FileUpload = React.createClass({
-//
-//   handleFile: function(e) {
-//     var reader = new FileReader();
-//     var file = e.target.files[0];
-//
-//     if(!file) {
-//       return;
-//     }
-//
-//     reader.onload = function(img) {
-//       ReactDom.findDOMNode(this.refs.in).value = '';
-//       this.props.handleFileChange(img.target.result);
-//     }.bind(this);
-//     reader.readAsDataURL(file);
-//   },
-//
-//   render: function() {
-//     return (
-//       <input ref="in" type="file" accept="image/*" onChange={this.handleFile} />
-//     );
-//   }
-// });
 
 export default AvatarForm;
