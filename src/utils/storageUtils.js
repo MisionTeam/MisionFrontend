@@ -16,7 +16,7 @@ const STORAGE_MAPPING = {
 
 class Storage {
   constructor(name, type) {
-    this.name = `brooklyn.${name}`;
+    this.name = `mision.${name}`;
     this.type = type;
     this.store = STORAGE_MAPPING[type];
   }
@@ -70,7 +70,7 @@ const managedStorage = {};
   // Private helper.
 const loopAndLoad = (storage, storageType) => {
   Object.keys(storage).forEach(k => {
-    const removeNameSpace = k.replace('brooklyn.', '');
+    const removeNameSpace = k.replace('mision.', '');
     if (!managedStorage[removeNameSpace]) {
       managedStorage[removeNameSpace] = new Storage(removeNameSpace, storageType);
     }

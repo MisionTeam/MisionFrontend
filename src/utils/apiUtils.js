@@ -1,7 +1,5 @@
 import axios from 'axios';
 
-import { storageManager, STORAGE_TYPES } from 'utils/storageUtils.js';
-
 // Add any config setup for axios.
 // const authStorage = storageManager.createOrFetchStorage('auth', STORAGE_TYPES.local);
 export const api = axios.create({

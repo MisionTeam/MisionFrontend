@@ -1,7 +1,6 @@
 import { createAction } from 'redux-actions';
 
 import authService from 'store/auth/authService.js';
-import * as payloaders from 'store/auth/authPayloaders.js';
 
 import { storageManager, STORAGE_TYPES } from 'utils/storageUtils.js';
 const authStorage = storageManager.createOrFetchStorage('auth', STORAGE_TYPES.local);
