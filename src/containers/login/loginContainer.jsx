@@ -2,8 +2,8 @@ import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
 
-import FacebookLoginContainer from 'containers/facebookLogin/FacebookLoginContainer.jsx';
-import HeaderInfoContainer from 'containers/headerInfo/HeaderInfoContainer.jsx';
+import FacebookLoginContainer from 'containers/facebookLogin/facebookLoginContainer.jsx';
+import HeaderInfoContainer from 'containers/headerInfo/headerInfoContainer.jsx';
 import Button from 'components/shared/button.jsx';
 
 import { processUserLogin, processUserLogout } from 'store/auth/authActions.js';
