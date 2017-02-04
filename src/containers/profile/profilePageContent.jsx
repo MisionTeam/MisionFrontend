@@ -4,6 +4,7 @@ import { FormattedMessage } from 'react-intl';
 import autobind from 'autobind-decorator';
 import { SubmissionError } from 'redux-form';
 
+import AvatarForm from 'forms/profile/avatarForm.jsx';
 import BasicInfoForm from 'forms/profile/basicInfoForm.jsx';
 import AddressForm from 'forms/profile/addressForm.jsx';
 import PersonalTagForm from 'forms/profile/personalTagForm.jsx';
@@ -47,14 +48,21 @@ class ProfilePageContent extends React.Component {
 
   state = {
     isExpanded: {
+      avatarForm: true,
       basicInfoForm: true,
       addressForm: true,
       personalTagForm: true
     },
     basicInforFormInitialValues: null,
     addressFormInitialValues: null,
-    personalTagFormInitialValues: null
-  }
+    personalTagFormInitialValues: null,
+    avatarFormInitialValues: {
+      last: null,
+      cropperOpen: false,
+      img: null,
+      croppedImage: 'http://ww3.sinaimg.cn/mw690/6f6fe5a7jw1e5oococe8lj20c80lrab6.jpg'
+    }
+  };
 
   componentWillMount() {
     this.componentWillReceiveProps(this.props);
@@ -99,7 +107,7 @@ class ProfilePageContent extends React.Component {
         addressFormInitialValues: newAddressInitialValues
       });
     }
-  }
+  };
 
   @autobind
   updateAddress(formData) {
@@ -140,6 +148,40 @@ class ProfilePageContent extends React.Component {
   }
 
   @autobind
+  avatarHandleFileChange(dataURI) {
+    const avatarConfig = this.state.avatarFormInitialValues;
+    avatarConfig.cropperOpen = true;
+    avatarConfig.img = dataURI;
+    if (avatarConfig.last) {
+      avatarConfig.croppedImage = avatarConfig.last;
+    }
+    this.setState({
+      avatarFormInitialValues: avatarConfig
+    });
+  }
+
+  @autobind
+  avatarHandleCrop(dataURI) {
+    this.setState({
+      avatarFormInitialValues: {
+        last: dataURI,
+        cropperOpen: false,
+        img: null,
+        croppedImage: dataURI
+      }
+    });
+  }
+
+  @autobind
+  avatarHandleRequestHide() {
+    const temp = this.state.avatarFormInitialValues;
+    temp.cropperOpen = false;
+    this.setState({
+      avatarFormInitialValues: temp
+    });
+  }
+
+  @autobind
   expandForm(form) {
     const newState = this.state.isExpanded;
     newState[form] = !newState[form];
@@ -153,6 +195,14 @@ class ProfilePageContent extends React.Component {
     return (
       <div className="profile-content">
         <div className="profile-content__container">
+          <div className="profile-content__form-group">
+            <FormGroupHeader expandForm={this.expandForm} formName="avatarForm" />
+            {
+              isExpanded.avatarForm ?
+                <AvatarForm handleFileChange={this.avatarHandleFileChange} handleCrop={this.avatarHandleCrop} handleRequestHide={this.avatarHandleRequestHide} initialValues={this.state.avatarFormInitialValues} /> :
+                null
+            }
+          </div>
           <div className="profile-content__form-group">
             <FormGroupHeader expandForm={this.expandForm} formName="basicInfoForm" />
             {
