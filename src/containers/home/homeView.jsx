@@ -9,7 +9,6 @@ import YouCanDoBlock from 'components/home/youCanDoBlock/youCanDoBlock.jsx';
 import WeAreBlock from 'components/home/weAreBlock/weAreBlock.jsx';
 import HomepageFooter from 'components/home/footer/homepageFooter.jsx';
 import HomepageBlock from 'layouts/homepageBlock/homepageBlock.jsx';
-// import LoginContainer from 'containers/login/loginContainer.jsx';
 
 class HomeContainer extends React.Component {
   render() {

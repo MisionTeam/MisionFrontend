@@ -109,5 +109,11 @@ export default {
   "profile.addressForm.postalCode.label": "FR Postal Code",
   "profile.personalTagForm.formTitle": "FR Personal Tags",
   "profile.personalTagForm.myTags.label": "FR My Tags",
-  "profile.personalTagForm.allTags.label": "FR All Tags"
+  "profile.personalTagForm.allTags.label": "FR All Tags",
+
+  /********************************
+  ****  Profile Page  ****
+  *******************************/
+  "mission.navbar.listLinkText": "List View FR",
+  "mission.navbar.mapLinkText": "Map View FR",
 };

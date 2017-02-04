@@ -3,6 +3,8 @@ import { browserHistory, Router } from 'react-router';
 import { Provider, connect } from 'react-redux';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { IntlProvider } from 'react-intl';
+import injectTapEventPlugin from 'react-tap-event-plugin';
+import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 
 import { storageManager, STORAGE_TYPES } from 'utils/storageUtils.js';
 
@@ -13,6 +15,8 @@ const connectState = (state) => {
     messages: state.app.locale.messages
   };
 };
+
+injectTapEventPlugin();
 
 @connect(connectState)
 class AppContainer extends Component {
@@ -41,7 +45,9 @@ class AppContainer extends Component {
       <Provider store={store}>
         <IntlProvider key={intlData.locale} {...intlData}>
           <div style={{ height: '100%' }}>
-            <Router history={syncedHistory} children={routes} />
+            <MuiThemeProvider>
+              <Router history={syncedHistory} children={routes} />
+            </MuiThemeProvider>
           </div>
         </IntlProvider>
       </Provider>

@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
 import { push } from 'react-router-redux';
+import { FormattedMessage } from 'react-intl';
 
 import { processUserLogin } from 'store/auth/authActions.js';
 import { processgetFacebookLoginStatus } from 'store/facebookLogin/facebookLoginActions.js';
@@ -86,7 +87,7 @@ class FacebookLoginContainer extends React.Component {
 
   render() {
     return (
-      <Button className="facebook-login-button" onClick={this.handleFacebookLogin} >Login with Facebook</Button>
+      <Button className="facebook-login-button" onClick={this.handleFacebookLogin} ><FormattedMessage id="homepage.facebookLogin.LoginButton" /></Button>
     );
   }
 }

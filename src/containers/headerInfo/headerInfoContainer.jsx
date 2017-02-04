@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
 
+import Link from 'components/shared/link.jsx';
 import { processGetUserFullProfile } from 'store/profile/profileActions.js';
 
 const connectState = (state) => ({
@@ -34,7 +35,7 @@ class HeaderInfoContainer extends React.Component {
     const profile = this.props.profile.toJS();
     return (
       <div className="header-info">
-        {profile.firstName} {profile.lastName}
+        <Link to="/profile">{profile.firstName} {profile.lastName}</Link>
       </div>
     );
   }

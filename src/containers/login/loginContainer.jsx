@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import autobind from 'autobind-decorator';
+import { push } from 'react-router-redux';
 
 import FacebookLoginContainer from 'containers/facebookLogin/facebookLoginContainer.jsx';
 import HeaderInfoContainer from 'containers/headerInfo/headerInfoContainer.jsx';
@@ -15,7 +16,8 @@ const connectState = (state) => ({
 
 const dispatchConnect = (dispatch) => ({
   login: (data) => processUserLogin(dispatch, data),
-  logout: () => processUserLogout(dispatch)
+  logout: () => processUserLogout(dispatch),
+  push: (location) => dispatch(push(location))
 });
 
 @connect(connectState, dispatchConnect)
@@ -23,13 +25,14 @@ class LoginContainer extends React.Component {
   static propTypes = {
     auth: React.PropTypes.object.isRequired,
     profile: React.PropTypes.object.isRequired,
-    logout: React.PropTypes.func.isRequired
+    logout: React.PropTypes.func.isRequired,
+    push: React.PropTypes.func.isRequired
   };
 
   @autobind
   handleLogout() {
     this.props.logout();
-    console.log('logout');
+    this.props.push('/home');
   }
 
   render() {

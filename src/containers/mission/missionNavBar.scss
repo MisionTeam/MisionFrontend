@@ -1,0 +1,21 @@
+.mission-navbar {
+  &__wrapper {
+    background: $blue-background-light !important;
+  }
+
+  &__link-wrapper {
+    flex-basis: 50%;
+
+    a {
+      text-decoration: none;
+    }
+
+    &.active {
+      background: $blue-background;
+
+      a {
+        color: $white;
+      }
+    }
+  }
+}

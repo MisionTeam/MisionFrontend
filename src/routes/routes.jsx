@@ -5,10 +5,10 @@ import { Route, IndexRoute, IndexRedirect } from 'react-router';
 import restrictedRoute from 'routes/restrictedRoute.jsx';
 
 import CoreLayout from '../layouts/CoreLayout/CoreLayout';
-import HeaderContainer from 'containers/header/headerContainer.jsx';
-import HomeContainer from 'containers/home/homeView.jsx';
-import ProfileContainer from 'containers/profile/profileContainer.jsx';
 import ErrorPageContainer from 'containers/errorPage/errorPage.jsx';
+import HomeContainer from 'containers/home/homeView.jsx';
+import MissionContainer from 'containers/mission/missionContainer.jsx';
+import ProfileContainer from 'containers/profile/profileContainer.jsx';
 
 @connect()
 class RouterRoot extends React.Component {
@@ -38,7 +38,7 @@ const routes = (
     <IndexRedirect to="/home" />
     <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
-    <Route path="post" component={HomeContainer} />
+    <Route path="mission" component={restrictedRoute({component: MissionContainer})} />
     <Route path="get" component={HomeContainer} />
     <Route path="profile">
       <IndexRoute component={restrictedRoute({component: ProfileContainer})} />
