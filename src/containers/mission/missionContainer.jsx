@@ -72,11 +72,16 @@ const MISSION_LIST = [
 ];
 
 class MissionContainer extends React.Component {
+  static propTypes = {
+    children: React.PropTypes.object.isRequired
+  }
+
   render() {
     return (
       <div className="mission">
         <div className="container">
           <MissionNavBar />
+          {this.props.children}
         </div>
       </div>
     );

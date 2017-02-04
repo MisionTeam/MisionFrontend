@@ -8,7 +8,25 @@ import CoreLayout from '../layouts/CoreLayout/CoreLayout';
 import ErrorPageContainer from 'containers/errorPage/errorPage.jsx';
 import HomeContainer from 'containers/home/homeView.jsx';
 import MissionContainer from 'containers/mission/missionContainer.jsx';
+import MissionListContainer from 'containers/mission/missionList.jsx';
+import MissionMapContainer from 'containers/mission/missionMap.jsx';
 import ProfileContainer from 'containers/profile/profileContainer.jsx';
+
+const MissionList = () => {
+  return (
+    <MissionContainer >
+      <MissionListContainer />
+    </MissionContainer>
+  );
+};
+
+const MissionMap = () => {
+  return (
+    <MissionContainer >
+      <MissionMapContainer />
+    </MissionContainer>
+  );
+};
 
 @connect()
 class RouterRoot extends React.Component {
@@ -38,7 +56,11 @@ const routes = (
     <IndexRedirect to="/home" />
     <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
-    <Route path="mission" component={restrictedRoute({component: MissionContainer})} />
+    <Route path="mission">
+      <IndexRoute component={restrictedRoute({component: MissionList})} />
+      <Route path="list" component={restrictedRoute({component: MissionList})} />
+      <Route path="map" component={restrictedRoute({component: MissionMap})} />
+    </Route>
     <Route path="get" component={HomeContainer} />
     <Route path="profile">
       <IndexRoute component={restrictedRoute({component: ProfileContainer})} />
