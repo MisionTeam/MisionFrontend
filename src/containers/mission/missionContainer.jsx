@@ -73,7 +73,10 @@ const MISSION_LIST = [
 
 class MissionContainer extends React.Component {
   static propTypes = {
-    children: React.PropTypes.object.isRequired
+    children: React.PropTypes.oneOfType([
+      React.PropTypes.array,
+      React.PropTypes.element
+    ])
   }
 
   render() {

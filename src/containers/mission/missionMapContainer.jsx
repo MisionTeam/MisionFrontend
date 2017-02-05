@@ -1,6 +1,6 @@
 import React from 'react';
 
-class MissionMap extends React.Component {
+class MissionMapContainer extends React.Component {
   render() {
     return (
       <div className="mission-list">
@@ -10,4 +10,4 @@ class MissionMap extends React.Component {
   }
 }
 
-export default MissionMap;
+export default MissionMapContainer;

@@ -116,4 +116,7 @@ export default {
   *******************************/
   "mission.navbar.listLinkText": "List View FR",
   "mission.navbar.mapLinkText": "Map View FR",
+  "mission.filter.allMissionLabel": "All Missions FR",
+  "mission.filter.categoryALabel": "Category A FR",
+  "mission.filter.categoryBLabel": "Category B FR",
 };
