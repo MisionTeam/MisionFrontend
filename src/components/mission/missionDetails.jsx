@@ -4,12 +4,13 @@ import autobind from 'autobind-decorator';
 
 class MissionDetails extends React.Component {
   static propTypes = {
+    selectedMission: React.PropTypes.object.isRequired
   }
 
   render() {
     return (
       <div className="mission-details">
-        Mission Details
+        {this.props.selectedMission.title}
       </div>
     );
   }

@@ -82,7 +82,8 @@ const filterMap = {
 
 class MissionListContainer extends React.Component {
   state = {
-    selectedIndex: 0
+    selectedIndex: 0,
+    selectedMission: {}
   }
 
   @autobind
@@ -92,15 +93,23 @@ class MissionListContainer extends React.Component {
     });
   }
 
+  @autobind
+  selectMission(mission) {
+    console.log(mission.id);
+    this.setState({
+      selectedMission: mission
+    });
+  }
+
   render() {
-    const { selectedIndex } = this.state;
+    const { selectedIndex, selectedMission } = this.state;
     return (
       <div className="mission-list-container">
         <div className="mission-list-container__container">
           <Paper zDepth={1}>
             <div className="paper-container">
               <MissionFilter handleFilterChange={this.handleFilterChange} selectedIndex={selectedIndex} />
-              <MissionInfoContainer filteredMissionList={MISSION_LIST} />
+              <MissionInfoContainer filteredMissionList={MISSION_LIST} selectMission={this.selectMission} selectedMission={selectedMission} />
             </div>
           </Paper>
         </div>

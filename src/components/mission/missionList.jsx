@@ -8,6 +8,10 @@ const listItemAvatarStyles = {
   marginRight: '30px'
 };
 
+const selectedItemStyle = {
+  backgroundColor: '#e6e6e6'
+};
+
 const missionStatusMap = {
   1: 'open',
   2: 'accepted',
@@ -16,7 +20,12 @@ const missionStatusMap = {
 
 class MissionList extends React.Component {
   static propTypes = {
-    filteredMissionList: React.PropTypes.array.isRequired
+    filteredMissionList: React.PropTypes.array.isRequired,
+    selectMission: React.PropTypes.func.isRequired
+  }
+
+  state = {
+    selectedIndex: null
   }
 
   renderListContent(item) {
@@ -40,6 +49,14 @@ class MissionList extends React.Component {
   }
 
   @autobind
+  handleSelectMission(item, index) {
+    this.props.selectMission(item);
+    this.setState({
+      selectedIndex: index
+    });
+  }
+
+  @autobind
   renderMissionList(listArray) {
     console.log(listArray);
     return (
@@ -50,6 +67,8 @@ class MissionList extends React.Component {
               <ListItem
                 key={index}
                 primaryText={this.renderListContent(item)}
+                onClick={() => this.handleSelectMission(item, index)}
+                style={this.state.selectedIndex === index ? selectedItemStyle : {}}
               />
             );
           })
