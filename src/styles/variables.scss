@@ -8,7 +8,9 @@ $blue-background: #6D90FF;
 $blue-background-light: #EDF3FC;
 $blue-text: #6692ff;
 
-$gray: #999999;
+$grey: #999999;
+
+$green: #008000;
 
 // If $gray-darkest ever changes from #191919, then
 // $division-market will need to be updated
@@ -40,6 +42,8 @@ $font-stack-serif-body: 'Chronicle SSm A', 'Chronicle SSm B', Georgia, Times, 'T
 
 $link-color: $primary;
 $link-hover-color: darken($link-color, 25%);
+
+$font-secondary-color: #CCCCCC;
 
 // --------------------
 // sass-mq

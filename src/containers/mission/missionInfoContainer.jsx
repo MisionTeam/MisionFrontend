@@ -5,10 +5,15 @@ import MissionList from 'components/mission/missionList.jsx';
 import MissionDetails from 'components/mission/missionDetails.jsx';
 
 class MissionInfoContainer extends React.Component {
+  static propTypes = {
+    filteredMissionList: React.PropTypes.array.isRequired
+  }
+
   render() {
+    const { filteredMissionList } = this.props;
     return (
       <div className="mission-info">
-        <MissionList />
+        <MissionList filteredMissionList={filteredMissionList} />
         <MissionDetails />
       </div>
     );

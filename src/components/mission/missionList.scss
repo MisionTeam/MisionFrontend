@@ -1,3 +1,55 @@
 .mission-list {
   flex-basis: 50%;
+
+  .mission-item {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    &__left-block {
+      flex-basis: 60%;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    &__right-block {
+      flex-basis: 20%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__title {
+      margin-bottom: 5px;
+    }
+
+    &__address {
+      font-size: 14px;
+      color: $font-secondary-color;
+    }
+
+    &__price {
+      margin-bottom: 5px;
+    }
+
+    &__status {
+      border-radius: 20px;
+      color: $white;
+      padding: 2px 5px;
+      font-size: 14px;
+
+      &--open {
+        background-color: $green;
+      }
+
+      &--accepted {
+        background-color: $blue-background;
+      }
+
+      &--closed {
+        background-color: $grey;
+      }
+    }
+  }
 }
