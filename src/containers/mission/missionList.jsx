@@ -6,74 +6,7 @@ import autobind from 'autobind-decorator';
 import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
 
-const MISSION_LIST = [
-  {
-    "id":3004,
-    "category":"transportation",
-    "title":"Get me a dinner!",
-    "status":1,
-    "price":"20",
-    "author":{
-       "id":1053,
-       "firstName":"Tom",
-       "lastName":"Hardy",
-       "avatar":null
-    },
-    "address":{
-       "lat":79.123455,
-       "lng":120.7473743,
-       "country":"Canada",
-       "state":"ON",
-       "city":"Toronto",
-       "street":"1 Yonge St",
-       "postalCode":"L3C 0B3"
-    }
-  },
-  {
-    "id":3509,
-    "category":"housekeeping",
-    "title":"Window cleaning",
-    "status":2,
-    "price":"40",
-    "author":{
-       "id":1092,
-       "firstName":"James",
-       "lastName":"Mason",
-       "avatar":null
-    },
-    "address":{
-       "lat":79.123455,
-       "lng":120.7473743,
-       "country":"Canada",
-       "state":"ON",
-       "city":"Toronto",
-       "street":"1 Yonge St",
-       "postalCode":"L3C 0B3"
-    }
-  },
-  {
-    "id":2104,
-    "category":"transportation",
-    "title":"Send follower!",
-    "status":3,
-    "price":"50",
-    "author":{
-       "id":1153,
-       "firstName":"Mary",
-       "lastName":"Mann",
-       "avatar":null
-    },
-    "address":{
-       "lat":79.123455,
-       "lng":120.7473743,
-       "country":"Canada",
-       "state":"ON",
-       "city":"Toronto",
-       "street":"1 Yonge St",
-       "postalCode":"L3C 0B3"
-    }
-  }
-];
+import { processGetMissionList } from 'store/mission/missionList/missionListActions.js';
 
 const listItemAvatarStyles = {
   marginRight: '30px'
@@ -90,18 +23,35 @@ const missionStatusMap = {
 };
 
 const connectDispatch = (dispatch) => ({
-  push: (location) => dispatch(push(location))
+  push: (location) => dispatch(push(location)),
+  getMissionList: () => processGetMissionList(dispatch)
 });
 
-@connect(null, connectDispatch)
+const connectState = (state) => ({
+  missionList: state.app.mission.missionList
+});
+
+@connect(connectState, connectDispatch)
 class MissionList extends React.Component {
   static propTypes = {
     // filteredMissionList: React.PropTypes.array.isRequired
-    push: React.PropTypes.func.isRequired
+    missionList: React.PropTypes.object.isRequired,
+    push: React.PropTypes.func.isRequired,
+    getMissionList: React.PropTypes.func.isRequired
   }
 
   state = {
     selectedIndex: null
+  }
+
+  componentWillMount() {
+    this.componentWillReceiveProps(this.props);
+  }
+
+  componentWillReceiveProps() {
+    if (!this.props.missionList.loadedDate) {
+      this.props.getMissionList();
+    }
   }
 
   renderListContent(item) {
@@ -153,10 +103,10 @@ class MissionList extends React.Component {
   }
 
   render() {
-    // const { filteredMissionList } = this.props;
+    const { missionList } = this.props;
     return (
       <div className="mission-list">
-        {this.renderMissionList(MISSION_LIST)}
+        {this.renderMissionList(missionList.missions)}
       </div>
     );
   }

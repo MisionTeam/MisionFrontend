@@ -3,7 +3,7 @@ import axios from 'axios';
 // Add any config setup for axios.
 // const authStorage = storageManager.createOrFetchStorage('auth', STORAGE_TYPES.local);
 export const api = axios.create({
-  baseURL: 'http://52.23.239.121:8181/'
+  baseURL: 'http://52.60.82.23:8181/'
 });
 
 api.interceptors.request.use(

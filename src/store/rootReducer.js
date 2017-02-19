@@ -2,16 +2,19 @@ import { combineReducers } from 'redux';
 import { routerReducer } from 'react-router-redux';
 import { reducer as formReducer } from 'redux-form';
 import locationReducer from 'store/location';
+
 import { authReducer as auth } from 'store/auth/authReducers.js';
-import { profileReducer as profile } from 'store/profile/profileReducers.js';
-import { localeReducer as locale } from 'store/locale/locale.js';
 import { errorReducer as error } from 'store/error/errorReducers.js';
+import { localeReducer as locale } from 'store/locale/locale.js';
+import { missionReducer as mission } from 'store/mission/missionReducers.js';
+import { profileReducer as profile } from 'store/profile/profileReducers.js';
 
 const reducerMap = {
   auth,
-  profile,
+  error,
   locale,
-  error
+  mission,
+  profile
 };
 
 export const rootReducer = (asyncReducers) => {
