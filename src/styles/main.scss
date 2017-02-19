@@ -43,8 +43,6 @@
 @import '~components/sideNavBar/sideNavBar.scss';
 @import '~components/input/inputText.scss';
 @import '~components/input/inputRadio.scss';
-@import '~components/mission/missionList.scss';
-@import '~components/mission/missionDetails.scss';
 
 // =====================
 // Containers
@@ -58,6 +56,8 @@
 @import '~containers/mission/missionNavBar.scss';
 @import '~containers/mission/missionListContainer.scss';
 @import '~containers/mission/missionInfoContainer.scss';
+@import '~containers/mission/missionList.scss';
+@import '~containers/mission/missionDetails.scss';
 
 // =====================
 // Common Components -- need fix styles

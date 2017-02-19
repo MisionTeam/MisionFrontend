@@ -1,6 +1,4 @@
 .mission-list {
-  flex-basis: 50%;
-
   .mission-item {
     display: flex;
     justify-content: flex-start;
@@ -14,7 +12,7 @@
     }
 
     &__right-block {
-      flex-basis: 20%;
+      flex-basis: 40%;
       display: flex;
       flex-direction: column;
       align-items: center;

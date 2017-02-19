@@ -10,6 +10,8 @@ import HomeContainer from 'containers/home/homeView.jsx';
 import MissionContainer from 'containers/mission/missionContainer.jsx';
 import MissionListContainer from 'containers/mission/MissionListContainer.jsx';
 import MissionMapContainer from 'containers/mission/missionMapContainer.jsx';
+import MissionList from 'containers/mission/missionList.jsx';
+import MissionDetails from 'containers/mission/missionDetails.jsx';
 import ProfileContainer from 'containers/profile/profileContainer.jsx';
 
 @connect()
@@ -41,9 +43,12 @@ const routes = (
     <IndexRoute component={HomeContainer} />
     <Route path="home" component={restrictedRoute({component: HomeContainer})} />
     <Route path="mission" component={restrictedRoute({component: MissionContainer})}>
-      <IndexRedirect to="/list" />
-      <IndexRoute component={restrictedRoute({component: MissionListContainer})} />
-      <Route path="list" component={restrictedRoute({component: MissionListContainer})} />
+      <IndexRedirect to="list" />
+      <Route path="list" component={restrictedRoute({component: MissionListContainer})}>
+        <IndexRedirect to="list-view" />
+        <Route path="list-view" component={restrictedRoute({component: MissionList})} />
+        <Route path="details-view" component={restrictedRoute({component: MissionDetails})} />
+      </Route>
       <Route path="map" component={restrictedRoute({component: MissionMapContainer})} />
     </Route>
     <Route path="get" component={HomeContainer} />
