@@ -76,7 +76,7 @@ class MissionList extends React.Component {
 
   @autobind
   handleSelectMission(item, index) {
-    this.props.push(`/mission/list/details-view?missionId=${item.id}`);
+    this.props.push(`/mission/details?missionId=${item.id}`);
     this.setState({
       selectedIndex: index
     });

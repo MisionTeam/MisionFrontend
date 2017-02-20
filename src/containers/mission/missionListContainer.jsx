@@ -3,6 +3,7 @@ import Paper from 'material-ui/Paper';
 import autobind from 'autobind-decorator';
 
 import MissionFilter from 'components/mission/missionFilter.jsx';
+import MissionList from 'containers/mission/missionList.jsx';
 
 const filterMap = {
   ALL: 0,
@@ -37,7 +38,7 @@ class MissionListContainer extends React.Component {
           <Paper zDepth={1}>
             <div className="paper-container">
               <MissionFilter handleFilterChange={this.handleFilterChange} selectedIndex={selectedIndex} />
-              {this.props.children}
+              <MissionList />
             </div>
           </Paper>
         </div>

@@ -3,6 +3,7 @@ import { FormattedMessage } from 'react-intl';
 import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import autobind from 'autobind-decorator';
+import Paper from 'material-ui/Paper';
 
 import { processGetMissionDetails } from 'store/mission/selectedMission/selectedMissionActions.js';
 
@@ -37,7 +38,13 @@ class MissionDetails extends React.Component {
 
   render() {
     return (
-      <div className="mission-details">
+      <div className="mission-details-container">
+        <div className="mission-details-container__container">
+          <Paper zDepth={1}>
+            <div className="paper-container">
+            </div>
+          </Paper>
+        </div>
       </div>
     );
   }
