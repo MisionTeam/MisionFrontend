@@ -5,6 +5,7 @@ import { Mission as InitialState } from 'store/mission/missionModels.js';
 
 // Sub reducers and actions
 import missionList from 'store/mission/missionList/missionListReducers.js';
+import selectedMission from 'store/mission/selectedMission/selectedMissionReducers.js';
 
 const mission = handleActions({
 
@@ -13,6 +14,7 @@ const mission = handleActions({
 // Mission Reducer
 export const missionReducer = mergeSubReducers(
   mission, {
-    missionList
+    missionList,
+    selectedMission
   }
 );

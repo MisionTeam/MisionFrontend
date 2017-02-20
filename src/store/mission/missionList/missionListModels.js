@@ -1,22 +1,7 @@
 import Immutable from 'immutable';
 import ServerRecord from 'store/shared/serverRecord.js';
 
-const Address = Immutable.Record({
-  lat: null,
-  lng: null,
-  country: null,
-  state: null,
-  city: null,
-  street: null,
-  postalCode: null
-});
-
-const Author = Immutable.Record({
-  id: null,
-  firstName: null,
-  lastName: null,
-  avatar: null
-});
+import { Address, Author } from 'store/mission/missionModels.js';
 
 const MissionListItem = Immutable.Record({
   author: new Author(),
@@ -33,8 +18,6 @@ const MissionList = ServerRecord({
 });
 
 export {
-  Address,
-  Author,
   MissionListItem,
   MissionList as InitialState
 };
