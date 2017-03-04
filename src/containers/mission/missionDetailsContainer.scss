@@ -1,7 +1,9 @@
-.mission-details-container {
+.mission-details {
   margin-top: 20px;
 
-  .paper-container {
-    padding: 20px;
+  &__card-header {
+    div:first-of-type {
+      padding-right: 0px !important;
+    }
   }
 }

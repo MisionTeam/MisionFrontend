@@ -119,4 +119,6 @@ export default {
   "mission.filter.allMissionLabel": "All Missions",
   "mission.filter.categoryALabel": "Category A",
   "mission.filter.categoryBLabel": "Category B",
+  "mission.details.button.accept": "Accept Mission",
+  "mission.details.button.cancel": "Cancel",
 };
