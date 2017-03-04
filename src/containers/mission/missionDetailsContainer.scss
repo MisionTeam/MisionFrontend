@@ -6,4 +6,17 @@
       padding-right: 0px !important;
     }
   }
+
+  .mission-details-content {
+    display: flex;
+    flex-direction: column;
+
+    &__address {
+      margin-bottom: 15px;
+    }
+
+    &__description {
+      margin-bottom: 15px;
+    }
+  }
 }

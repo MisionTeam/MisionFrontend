@@ -9,6 +9,20 @@ import FlatButton from 'material-ui/FlatButton';
 
 import { processGetMissionDetails } from 'store/mission/selectedMission/selectedMissionActions.js';
 
+const MissionDetailsContent = ({mission}) => (
+  <div className="mission-details-content">
+    <div className="mission-details-content__address">
+      Address: {mission.address.street}, {mission.address.city}
+    </div>
+    <div className="mission-details-content__description">
+      Description: {mission.description}
+    </div>
+  </div>
+);
+MissionDetailsContent.propTypes = {
+  mission: React.PropTypes.object.isRequired
+};
+
 const connectDispatch = (dispatch) => ({
   push: (location) => dispatch(push(location)),
   getMissionDetails: (data) => processGetMissionDetails(dispatch, data)
@@ -64,7 +78,7 @@ class MissionDetails extends React.Component {
               subtitleStyle={{paddingRight: '0px'}}
             />
             <CardText>
-              {selectedMission.description}
+              <MissionDetailsContent mission={selectedMission} />
             </CardText>
             <CardActions>
               <FlatButton label={<FormattedMessage id="mission.details.button.accept" />} onClick={this.handleAccept} />
