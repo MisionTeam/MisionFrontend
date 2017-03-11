@@ -121,4 +121,7 @@ export default {
   "mission.filter.categoryBLabel": "Category B FR",
   "mission.details.button.accept": "Accept Mission FR",
   "mission.details.button.cancel": "Cancel FR",
+  "mission.details.sectionHeader.price": "Price FR",
+  "mission.details.sectionHeader.address": "Address FR",
+  "mission.details.sectionHeader.description": "Description FR",
 };

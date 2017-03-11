@@ -4,18 +4,44 @@ import { connect } from 'react-redux';
 import { push } from 'react-router-redux';
 import autobind from 'autobind-decorator';
 import moment from 'moment';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+import {Card, CardActions, CardHeader, CardTitle, CardText} from 'material-ui/Card';
 import FlatButton from 'material-ui/FlatButton';
+import Pointer from 'layouts/pointer/pointer.jsx';
 
 import { processGetMissionDetails } from 'store/mission/selectedMission/selectedMissionActions.js';
 
+const SectionHeader = ({headerName, iconName}) => (
+  <div className="mission-details-content__section-header">
+    <Pointer useIcon color="blue" name={iconName} />
+    <div className="mission-details-content__section-header-name">
+      <FormattedMessage id={`mission.details.sectionHeader.${headerName}`} />
+    </div>
+  </div>
+);
+SectionHeader.propTypes = {
+  headerName: React.PropTypes.string.isRequired,
+  iconName: React.PropTypes.string.isRequired
+};
+
 const MissionDetailsContent = ({mission}) => (
   <div className="mission-details-content">
-    <div className="mission-details-content__address">
-      Address: {mission.address.street}, {mission.address.city}
+    <div className="mission-details-content__section-wrapper">
+      <SectionHeader headerName="price" iconName="money" />
+      <div className="mission-details-content__section-content">
+        {mission.price}
+      </div>
     </div>
-    <div className="mission-details-content__description">
-      Description: {mission.description}
+    <div className="mission-details-content__section-wrapper">
+      <SectionHeader headerName="address" iconName="place" />
+      <div className="mission-details-content__section-content">
+        {mission.address.street}, {mission.address.city}
+      </div>
+    </div>
+    <div className="mission-details-content__section-wrapper">
+      <SectionHeader headerName="description" iconName="description" />
+      <div className="mission-details-content__section-content">
+        {mission.description}
+      </div>
     </div>
   </div>
 );
@@ -69,21 +95,27 @@ class MissionDetails extends React.Component {
       <div className="mission-details">
         <div className="mission-details__container">
           <Card>
-            <CardTitle title={selectedMission.title} subtitle={`Date Posted: ${postDate}`} />
-            <CardHeader
-              className="mission-details__card-header"
-              title={`${selectedMission.author.firstName} ${selectedMission.author.lastName}`}
-              subtitle="Subtitle"
-              avatar="/images/common/kobe.png"
-              subtitleStyle={{paddingRight: '0px'}}
-            />
-            <CardText>
-              <MissionDetailsContent mission={selectedMission} />
-            </CardText>
-            <CardActions>
-              <FlatButton label={<FormattedMessage id="mission.details.button.accept" />} onClick={this.handleAccept} />
-              <FlatButton label={<FormattedMessage id="mission.details.button.cancel" />} onClick={this.handleCancel} />
-            </CardActions>
+            <div className="mission-details-card__container">
+              <CardTitle
+                title={selectedMission.title}
+                subtitle={`Date Posted: ${postDate}`}
+                titleStyle={{fontWeight: 'bold'}}
+              />
+              <CardHeader
+                className="mission-details__card-header"
+                title={`${selectedMission.author.firstName} ${selectedMission.author.lastName}`}
+                subtitle="Subtitle"
+                avatar="/images/common/kobe.png"
+                subtitleStyle={{paddingRight: '0px'}}
+              />
+              <CardText>
+                <MissionDetailsContent mission={selectedMission} />
+              </CardText>
+              <CardActions>
+                <FlatButton label={<FormattedMessage id="mission.details.button.accept" />} onClick={this.handleAccept} />
+                <FlatButton label={<FormattedMessage id="mission.details.button.cancel" />} onClick={this.handleCancel} />
+              </CardActions>
+            </div>
           </Card>
         </div>
       </div>

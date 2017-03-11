@@ -11,12 +11,22 @@
     display: flex;
     flex-direction: column;
 
-    &__address {
-      margin-bottom: 15px;
+    &__section-wrapper {
+      margin-bottom: 20px;
     }
 
-    &__description {
+    &__section-header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
       margin-bottom: 15px;
+      font-weight: bold;
+    }
+
+    &__section-content {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 }
