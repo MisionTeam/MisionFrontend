@@ -17,15 +17,11 @@ const connectState = (state) => ({
 });
 
 @connect(connectState, connectDispatch)
-class MissionMapContainer extends React.Component {
+class MissionMap extends React.Component {
   static propTypes = {
     missionList: React.PropTypes.object.isRequired,
     push: React.PropTypes.func.isRequired,
     getMissionList: React.PropTypes.func.isRequired
-  }
-
-  state = {
-    mapDOM: null
   }
 
   componentWillMount() {
@@ -36,6 +32,9 @@ class MissionMapContainer extends React.Component {
     if (!props.missionList.loadedDate) {
       this.props.getMissionList();
     }
+    if (props.missionList.loadedDate) {
+      this.initMap();
+    }
   }
 
   initMap() {
@@ -44,42 +43,23 @@ class MissionMapContainer extends React.Component {
       navigator.geolocation.getCurrentPosition((res) => {
         currenLocation.lat = res.coords.latitude;
         currenLocation.lng = res.coords.longitude;
-        const map = new googleMap.Map(this.state.mapDOM, {
-          zoom: 13,
-          center: currenLocation
-        });
       });
     } else {
       /* geolocation IS NOT available */
       console.log('geolocation IS NOT available');
     }
+    console.log(currenLocation);
+    const map = new googleMap.Map(document.getElementById('mission-map'), {
+      zoom: 4,
+      center: currenLocation
+    });
   }
 
   render() {
-    const { mapDOM } = this.state;
     return (
-      <div className="mission-map-container">
-        <Paper zDepth={1}>
-          <div className="paper-container">
-            <div className="mission-map">
-              <div className="mission-map__map-container" id="mission-map"
-                ref={(mapNode) => {
-                  if (mapNode && !mapDOM) {
-                    this.setState({
-                      mapDOM: mapNode
-                    }, () => {
-                      this.initMap();
-                    });
-                  }
-                }}>
-
-              </div>
-            </div>
-          </div>
-        </Paper>
-      </div>
+      <div />
     );
   }
 }
 
-export default MissionMapContainer;
+export default MissionMap;

@@ -1,0 +1,14 @@
+.mission-map-container {
+  margin-top: 20px;
+
+  .paper-container {
+    padding: 20px;
+
+    .mission-map {
+      &__map-container {
+        height: 500px;
+        width: 100%;
+      }
+    }
+  }
+}
