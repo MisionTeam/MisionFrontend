@@ -112,7 +112,7 @@ export default {
   "profile.personalTagForm.allTags.label": "All Tags",
 
   /********************************
-  ****  Profile Page  ****
+  ****  Mission Page  ****
   *******************************/
   "mission.navbar.listLinkText": "List View",
   "mission.navbar.mapLinkText": "Map View",
