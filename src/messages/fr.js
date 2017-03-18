@@ -112,7 +112,7 @@ export default {
   "profile.personalTagForm.allTags.label": "FR All Tags",
 
   /********************************
-  ****  Profile Page  ****
+  ****  Mission Page  ****
   *******************************/
   "mission.navbar.listLinkText": "List View FR",
   "mission.navbar.mapLinkText": "Map View FR",
@@ -124,4 +124,5 @@ export default {
   "mission.details.sectionHeader.price": "Price FR",
   "mission.details.sectionHeader.address": "Address FR",
   "mission.details.sectionHeader.description": "Description FR",
+  "mission.map.header": "Missions around your current location FR"
 };

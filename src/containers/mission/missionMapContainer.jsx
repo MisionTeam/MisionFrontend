@@ -6,6 +6,7 @@ import { push } from 'react-router-redux';
 import autobind from 'autobind-decorator';
 import Paper from 'material-ui/Paper';
 import FlatButton from 'material-ui/FlatButton';
+import { FormattedMessage } from 'react-intl';
 
 import { processGetMissionList } from 'store/mission/missionList/missionListActions.js';
 
@@ -192,6 +193,11 @@ class MissionMapContainer extends React.Component {
       <div className="mission-map-container">
         <Paper zDepth={1}>
           <div className="paper-container">
+            <div className="mission-map__header">
+              <div className="mission-map__header-text">
+                <FormattedMessage id="mission.map.header" />
+              </div>
+            </div>
             <div className="mission-map">
               <div className="mission-map__map-container" id="mission-map"
                 ref={(mapNode) => {

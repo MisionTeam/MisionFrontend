@@ -124,4 +124,5 @@ export default {
   "mission.details.sectionHeader.price": "Price",
   "mission.details.sectionHeader.address": "Address",
   "mission.details.sectionHeader.description": "Description",
+  "mission.map.header": "Missions around your current location"
 };
