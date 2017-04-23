@@ -124,5 +124,10 @@ export default {
   "mission.details.sectionHeader.price": "Price FR",
   "mission.details.sectionHeader.address": "Address FR",
   "mission.details.sectionHeader.description": "Description FR",
-  "mission.map.header": "Missions around your current location FR"
+  "mission.map.header": "Missions around your current location FR",
+
+  /********************************
+  ****  Post Mission Page  ****
+  *******************************/
+  "postMission.postMissionForm.missionTitle": "Mission Title",
 };

@@ -1,6 +1,7 @@
 import React from 'react';
 import classNames from 'classnames';
 import { FormattedMessage } from 'react-intl';
+import TextField from 'material-ui/TextField';
 
 const validPropTypes = {
   meta: React.PropTypes.object,
@@ -8,8 +9,28 @@ const validPropTypes = {
   classname: React.PropTypes.string,
   optionsLabel: React.PropTypes.string,
   options: React.PropTypes.array,
-  checked: React.PropTypes.bool
+  checked: React.PropTypes.bool,
+  fieldProps: React.PropTypes.object
 };
+
+const MaterialInputText = ({ classname, input, meta, fieldProps }) => {
+  return (
+    <TextField
+      className={classname}
+      hintText={<FormattedMessage id={fieldProps.label} />}
+      floatingLabelText={<FormattedMessage id={fieldProps.label} />}
+      errorText={
+        meta.touched &&
+         meta.error &&
+         <span className="text-group__input-error">
+           <FormattedMessage id={meta.error} />
+         </span>
+      }
+      {...input}
+    />
+  );
+};
+MaterialInputText.propTypes = validPropTypes;
 
 const InputText = ({ classname, input, meta }) => {
   return (
@@ -83,12 +104,16 @@ class InputGroup extends React.Component {
       input,
       classname,
       optionsLabel,
-      options
+      options,
+      ...fieldProps
     } = this.props;
 
     switch (type) {
       case 'text': {
         return <InputText input={input} meta={meta} classname={classname} />;
+      }
+      case 'materialText': {
+        return <MaterialInputText input={input} meta={meta} classname={classname} fieldProps={fieldProps} />;
       }
       case 'radio': {
         return <InputRadio input={input} meta={meta} classname={classname} optionsLabel={optionsLabel} />;

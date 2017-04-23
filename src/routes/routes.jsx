@@ -11,6 +11,7 @@ import MissionContainer from 'containers/mission/missionContainer.jsx';
 import MissionListContainer from 'containers/mission/MissionListContainer.jsx';
 import MissionMapContainer from 'containers/mission/missionMapContainer.jsx';
 import MissionDetails from 'containers/mission/missionDetailsContainer.jsx';
+import PostMissionContainer from 'containers/postMission/postMissionContainer.jsx';
 import ProfileContainer from 'containers/profile/profileContainer.jsx';
 
 @connect()
@@ -47,7 +48,7 @@ const routes = (
       <Route path="map" component={restrictedRoute({component: MissionMapContainer})} />
       <Route path="details" component={restrictedRoute({component: MissionDetails})} />
     </Route>
-    <Route path="get" component={HomeContainer} />
+    <Route path="post" component={PostMissionContainer} />
     <Route path="profile">
       <IndexRoute component={restrictedRoute({component: ProfileContainer})} />
       <Route path="info" component={restrictedRoute({component: ProfileContainer})} />

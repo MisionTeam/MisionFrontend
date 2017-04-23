@@ -48,16 +48,16 @@ class HeaderContainer extends React.Component {
                   </Link>
                 </div>
               </div>
-              <div className={this.activeClassNameGenerator('header__link-row', ['/mission'])}>
+              <div className={this.activeClassNameGenerator('header__link-row', ['/post'])}>
                 <div className="header__link-wrapper">
-                  <Link className="header__post-link" activeClassName="post-link--active" to="/mission">
+                  <Link className="header__post-link" activeClassName="post-link--active" to="/post">
                     <ImageWrapper className="header__post-link-icon" imageUrl="/images/common/post.svg" />
                   </Link>
                 </div>
               </div>
-              <div className={this.activeClassNameGenerator('header__link-row', ['/get'])}>
+              <div className={this.activeClassNameGenerator('header__link-row', ['/mission'])}>
                 <div className="header__link-wrapper">
-                  <Link className="header__get-link" activeClassName="get-link--active" to="/get">
+                  <Link className="header__get-link" activeClassName="get-link--active" to="/mission">
                     <ImageWrapper className="header__get-link-icon" imageUrl="/images/common/get.svg" />
                   </Link>
                 </div>
